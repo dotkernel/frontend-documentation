@@ -1,0 +1,33 @@
+docs_dir: docs/book
+site_dir: docs/html
+extra:
+  project: API
+  current_version: v5
+  versions:
+    - v5
+nav:
+  - Home: index.md
+  - v5:
+      - Introduction: v5/introduction/introduction.md
+      - Overview:
+          - "Server Requirements": v5/introduction/server-requirements.md
+          - "File Structure": v5/introduction/file-structure.md
+          - "Packages": v5/introduction/packages.md
+      - Installation:
+          - "Getting Started": v5/installation/getting-started.md
+          - "Composer": v5/installation/composer.md
+          - "Configuration Files": v5/installation/configuration-files.md
+          - "Doctrine ORM": v5/installation/doctrine-orm.md
+          - "Development Mode and the Debugbar": v5/installation/development-mode-debugbar.md
+          - "Running the Application": v5/installation/running-application.md
+          - "FAQ": v5/installation/faq.md
+      - Core Features:
+          - "Authorization": v5/core-features/authorization.md
+          - "NPM Commands": v5/installation/npm_commands.md
+          - "Dependency Injection": v5/core-features/dependency-injection.md
+          - "Languages": v5/core-features/languages.md
+site_name: frontend
+site_description: "DotKernel Frontend"
+repo_url: "https://github.com/dotkernel/frontend"
+plugins:
+  - search
