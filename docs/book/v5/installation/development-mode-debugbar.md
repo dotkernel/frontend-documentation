@@ -8,16 +8,16 @@ composer development-enable
 
 - If not already done, remove the `.dist` extension from `config/autoload/development.global.php.dist`.
 
-# Using DebugBar
+## Using DebugBar
 
 DotKernel comes with its own DebugBar already installed and configured. It is enabled when you clone the config file `config/autoload/debugbar.local.php.dist` as `config/autoload/debugbar.local.php`. You can disable the tool by going into its config file `config/autoload/debugbar.local.php` and changing
 
-```
+```php
 'enabled' => true
 ```
 
 to
 
-```
+```php
 'enabled' => false
 ```

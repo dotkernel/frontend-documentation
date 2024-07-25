@@ -1,4 +1,4 @@
-## NPM Commands
+# NPM Commands
 
 To install dependencies into the `node_modules` directory run this command.
 

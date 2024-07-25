@@ -2,21 +2,21 @@
 
 ## Prepare config files
 
-* duplicate `config/autoload/debugbar.local.php.dist` as `config/autoload/debugbar.local.php`
+- duplicate `config/autoload/debugbar.local.php.dist` as `config/autoload/debugbar.local.php`
 
-* duplicate `config/autoload/development.local.php.dist` as `config/autoload/development.local.php`
+- duplicate `config/autoload/development.local.php.dist` as `config/autoload/development.local.php`
 
 ### Note
 
-* duplicate `config/autoload/local.php.dist` as `config/autoload/local.php`
+- duplicate `config/autoload/local.php.dist` as `config/autoload/local.php`
 
-* duplicate `config/autoload/mail.local.php.dist` as `config/autoload/mail.local.php`
+- duplicate `config/autoload/mail.local.php.dist` as `config/autoload/mail.local.php`
 
 ### Note
 
 > If you intend to send emails from your Frontend, make sure to fill in SMTP connection params. This will be covered in the next section.
 
-* **optional**: in order to run/create tests, duplicate `config/autoload/local.test.php.dist` as `config/autoload/local.test.php`
+- **optional**: in order to run/create tests, duplicate `config/autoload/local.test.php.dist` as `config/autoload/local.test.php`
 
 ### Note
 
