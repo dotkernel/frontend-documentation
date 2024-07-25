@@ -3,14 +3,10 @@
 ## Prepare config files
 
 - duplicate `config/autoload/debugbar.local.php.dist` as `config/autoload/debugbar.local.php`
-
 - duplicate `config/autoload/development.local.php.dist` as `config/autoload/development.local.php`
-
-### Note
-
 - duplicate `config/autoload/local.php.dist` as `config/autoload/local.php`
-
 - duplicate `config/autoload/mail.local.php.dist` as `config/autoload/mail.local.php`
+- Edit `config/autoload/local.php` according to your dev machine and fill in the `database` configuration.
 
 ### Note
 
