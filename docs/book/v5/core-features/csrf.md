@@ -67,7 +67,7 @@ Open the template that renders your form and add the following code somewhere be
 tags:
 
 ```text
-{{ formElement(form.get('contactCsrf')) }}
+{{ formElement(form.get('exampleCsrf')) }}
 ```
 
 ## Test the implementation
