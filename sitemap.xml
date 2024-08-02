@@ -2,82 +2,87 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.dotkernel.org/frontend-documentation/</loc>
-         <lastmod>2024-07-31</lastmod>
+         <lastmod>2024-08-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dotkernel.org/frontend-documentation/v5/core-features/authorization/</loc>
-         <lastmod>2024-07-31</lastmod>
+         <lastmod>2024-08-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.dotkernel.org/frontend-documentation/v5/core-features/csrf/</loc>
+         <lastmod>2024-08-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dotkernel.org/frontend-documentation/v5/core-features/dependency-injection/</loc>
-         <lastmod>2024-07-31</lastmod>
+         <lastmod>2024-08-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dotkernel.org/frontend-documentation/v5/core-features/languages/</loc>
-         <lastmod>2024-07-31</lastmod>
+         <lastmod>2024-08-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dotkernel.org/frontend-documentation/v5/core-features/npm_commands/</loc>
-         <lastmod>2024-07-31</lastmod>
+         <lastmod>2024-08-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dotkernel.org/frontend-documentation/v5/installation/composer/</loc>
-         <lastmod>2024-07-31</lastmod>
+         <lastmod>2024-08-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dotkernel.org/frontend-documentation/v5/installation/configuration-files/</loc>
-         <lastmod>2024-07-31</lastmod>
+         <lastmod>2024-08-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dotkernel.org/frontend-documentation/v5/installation/development-mode-debugbar/</loc>
-         <lastmod>2024-07-31</lastmod>
+         <lastmod>2024-08-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dotkernel.org/frontend-documentation/v5/installation/doctrine-orm/</loc>
-         <lastmod>2024-07-31</lastmod>
+         <lastmod>2024-08-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dotkernel.org/frontend-documentation/v5/installation/faq/</loc>
-         <lastmod>2024-07-31</lastmod>
+         <lastmod>2024-08-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dotkernel.org/frontend-documentation/v5/installation/getting-started/</loc>
-         <lastmod>2024-07-31</lastmod>
+         <lastmod>2024-08-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dotkernel.org/frontend-documentation/v5/installation/running-application/</loc>
-         <lastmod>2024-07-31</lastmod>
+         <lastmod>2024-08-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dotkernel.org/frontend-documentation/v5/introduction/file-structure/</loc>
-         <lastmod>2024-07-31</lastmod>
+         <lastmod>2024-08-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dotkernel.org/frontend-documentation/v5/introduction/introduction/</loc>
-         <lastmod>2024-07-31</lastmod>
+         <lastmod>2024-08-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dotkernel.org/frontend-documentation/v5/introduction/packages/</loc>
-         <lastmod>2024-07-31</lastmod>
+         <lastmod>2024-08-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.dotkernel.org/frontend-documentation/v5/introduction/server-requirements/</loc>
-         <lastmod>2024-07-31</lastmod>
+         <lastmod>2024-08-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
