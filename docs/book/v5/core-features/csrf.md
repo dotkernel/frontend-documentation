@@ -78,7 +78,7 @@ however you named it). After filling out the form, submitting it should work as 
 In order to make sure that the new CSRF field works as expected, you can inspect the form using your browser's
 `Developer tools` and modify its value in any way. Submitting a filled out form should result in a validation error:
 
-> <b>CSRF</b> is required and cannot be empty
+> **CSRF** is required and cannot be empty
 
 ### Timeout
 
@@ -86,6 +86,6 @@ Note the `timeout` option in your PHP form's `exampleCsrf` field, with its defau
 represents the value in seconds for how long the token is valid. Submitting a form that has been rendered longer than
 this value will result in a validation error:
 
-> <b>CSRF</b> is invalid
+> **CSRF** is invalid
 
 You can modify the value of `timeout` in each form, but the default value should work in most cases.
