@@ -26,6 +26,7 @@ nav:
           - "NPM Commands": v5/core-features/npm_commands.md
           - "Dependency Injection": v5/core-features/dependency-injection.md
           - "Languages": v5/core-features/languages.md
+          - "CSRF": v5/core-features/csrf.md
 site_name: frontend
 site_description: "DotKernel Frontend"
 repo_url: "https://github.com/dotkernel/frontend"
