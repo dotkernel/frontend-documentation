@@ -1,7 +1,7 @@
 # Account anonymization
 
 According to the GDPR, companies that record personal data from EU citizens must delete said data if its owner requests its deletion.
-An alternative is to anonymize the data, according to [this article](https://commission.europa.eu/law/law-topic/data-protection/reform/rules-business-and-organisations/dealing-citizens/do-we-always-have-delete-personal-data-if-person-asks_en). 
+An alternative is to anonymize the data, according to [this article](https://commission.europa.eu/law/law-topic/data-protection/reform/rules-business-and-organisations/dealing-citizens/do-we-always-have-delete-personal-data-if-person-asks_en).
 
 ## What is 'personal data'?
 
@@ -18,7 +18,7 @@ According to [this article](https://commission.europa.eu/law/law-topic/data-prot
 - Data held by a hospital or doctor, which could be a symbol that uniquely identifies a person.
 
 Out of the box, Dotkernel Frontend saves the user's name (firstname and lastname) and email (identity).
-This personal data is used for emails related to password reset and account activation. 
+This personal data is used for emails related to password reset and account activation.
 
 ## Anonymization
 
