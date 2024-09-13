@@ -27,6 +27,7 @@ nav:
           - "Dependency Injection": v5/core-features/dependency-injection.md
           - "Languages": v5/core-features/languages.md
           - "CSRF": v5/core-features/csrf.md
+          - "Account anonymization": v5/core-features/account-anonymization.md
 site_name: frontend
 site_description: "DotKernel Frontend"
 repo_url: "https://github.com/dotkernel/frontend"
