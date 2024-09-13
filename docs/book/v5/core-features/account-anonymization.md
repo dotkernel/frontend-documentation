@@ -31,4 +31,4 @@ The anonymization process makes these replacements:
 
 The `userAnonymizeAppend` key can be set in `config/autoload/local.php` or left empty.
 
-Note: setting `userAnonymizeAppend` to an email domain would work as a catch-all email, if your email service provider has this option enabled.
+> Setting `userAnonymizeAppend` to an email domain would work as a catch-all email, if your email service provider has this option enabled.
