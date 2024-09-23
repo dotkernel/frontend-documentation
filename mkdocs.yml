@@ -14,6 +14,7 @@ nav:
           - "File Structure": v5/introduction/file-structure.md
           - "Packages": v5/introduction/packages.md
       - Installation:
+          - "Introduction": v5/installation/installation-intro.md
           - "Getting Started": v5/installation/getting-started.md
           - "Composer": v5/installation/composer.md
           - "Configuration Files": v5/installation/configuration-files.md
@@ -22,6 +23,8 @@ nav:
           - "Running the Application": v5/installation/running-application.md
           - "FAQ": v5/installation/faq.md
       - Core Features:
+          - "Creating database migrations": v5/core-features/creating-migrations.md
+          - "Creating database fixtures": v5/core-features/creating-fixtures.md
           - "Authorization": v5/core-features/authorization.md
           - "NPM Commands": v5/core-features/npm_commands.md
           - "Dependency Injection": v5/core-features/dependency-injection.md
