@@ -8,7 +8,7 @@
 Using your terminal, navigate inside the directory you want to download the project files into.
 
 > Make sure that
-> 
+>
 > - The directory is empty before proceeding to the download process.
 >     - You will get this error if the directory is not empty `fatal: destination path '.' already exists and is not an empty directory.` and no files will be cloned.
 > - That you have writing permissions on the directory.

@@ -2,11 +2,11 @@
 
 We recommend running your applications in WSL:
 
-- make sure you have <a href="https://github.com/dotkernel/development/blob/main/wsl/README.md" target="_blank">WSL</a> installed on your system
-- currently we provide a distro implementations for <a href="https://github.com/dotkernel/development/blob/main/wsl/os/almalinux9/README.md" target="_blank">AlmaLinux9</a>
-- install the application in a virtualhost as recommended by the chosen distro
-- set `$baseUrl` in **config/autoload/local.php** to the address of the virtualhost
-- run the application by opening the virtualhost address in your browser
+- Make sure you have [WSL](https://github.com/dotkernel/development/blob/main/wsl/README.md) installed on your system.
+- Currently we provide a distro implementations for [AlmaLinux9](https://github.com/dotkernel/development/blob/main/wsl/os/almalinux9/README.md).
+- Install the application in a virtualhost as recommended by the chosen distro.
+- Set `$baseUrl` in **config/autoload/local.php** to the address of the virtualhost.
+- Run the application by opening the virtualhost address in your browser.
 
 You should see the `DotKernel Frontend` welcome page.
 
