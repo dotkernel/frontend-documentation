@@ -23,14 +23,14 @@ nav:
           - "Running the Application": v5/installation/running-application.md
           - "FAQ": v5/installation/faq.md
       - How to:
-          - "Create Database Migrations": v5/core-features/creating-migrations.md
-          - "Create Database Fixtures": v5/core-features/creating-fixtures.md
-          - "Configure Authorizations": v5/core-features/authorization.md
-          - "Use NPM Commands": v5/core-features/npm_commands.md
-          - "Inject Dependencies": v5/core-features/dependency-injection.md
-          - "Configure Languages": v5/core-features/languages.md
-          - "Set Up CSRF": v5/core-features/csrf.md
-          - "Anonymize Accounts": v5/core-features/account-anonymization.md
+          - "Create Database Migrations": v5/how-to/creating-migrations.md
+          - "Create Database Fixtures": v5/how-to/creating-fixtures.md
+          - "Configure Authorizations": v5/how-to/authorization.md
+          - "Use NPM Commands": v5/how-to/npm_commands.md
+          - "Inject Dependencies": v5/how-to/dependency-injection.md
+          - "Configure Languages": v5/how-to/languages.md
+          - "Set Up CSRF": v5/how-to/csrf.md
+          - "Anonymize Accounts": v5/how-to/account-anonymization.md
 site_name: frontend
 site_description: "DotKernel Frontend"
 repo_url: "https://github.com/dotkernel/frontend"
