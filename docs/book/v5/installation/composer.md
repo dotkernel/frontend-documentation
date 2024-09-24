@@ -2,7 +2,7 @@
 
 Composer is required to install DotKernel `frontend`. You can install Composer on the [official site](https://getcomposer.org/).
 
-> First make sure that you have navigated your command prompt in the folder where you copied the files in the previous step. 
+> First make sure that you have navigated your command prompt in the folder where you copied the files in the previous step.
 
 ## Install dependencies
 

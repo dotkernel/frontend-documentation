@@ -60,7 +60,7 @@ If everything ran correctly, you will get this confirmation.
 [OK] Successfully migrated to version: Frontend\Migrations\Version20240806123413
 ```
 
-> The migration name `Version20240806123413` may differ in future Frontend updates. 
+> The migration name `Version20240806123413` may differ in future Frontend updates.
 
 ## Fixtures
 

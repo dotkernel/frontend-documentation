@@ -1,6 +1,7 @@
 # Authorization Guards
 
-The packages responsible for restricting access to certain parts of the application are [dot-rbac-guard](https://github.com/dotkernel/dot-rbac-guard) and [dot-rbac](https://github.com/dotkernel/dot-rbac). These packages work together to create an infrastructure that is customizable and diversified to manage user access to the platform by specifying the type of role the user has.
+The packages responsible for restricting access to certain parts of the application are [dot-rbac-guard](https://github.com/dotkernel/dot-rbac-guard) and [dot-rbac](https://github.com/dotkernel/dot-rbac).
+These packages work together to create an infrastructure that is customizable and diversified to manage user access to the platform by specifying the type of role the user has.
 
 The `authorization.global.php` file provides multiple configurations specifying multiple roles as well as the types of permissions to which these roles have access.
 

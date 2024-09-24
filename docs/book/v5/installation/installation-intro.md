@@ -1,6 +1,7 @@
 # Introduction
 
-In this tutorial, we will install Dotkernel Frontend from scratch. We will 
+In this tutorial, we will install Dotkernel Frontend from scratch.
+We will focus on these tasks:
 
 - Highlight 3rd party tools required for the installation.
 - Provide all the relevant commands with expected responses.
