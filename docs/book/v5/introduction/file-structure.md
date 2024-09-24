@@ -1,6 +1,6 @@
 # File structure
 
-Dotkernel Frontend follows the <a href="https://www.php-fig.org/psr/psr-4/" target="_blank">PSR-4</a> standards.
+Dotkernel Frontend follows the [PSR-4](https://www.php-fig.org/psr/psr-4/) standards.
 
 It is a good practice to standardize the file structure of projects.
 
