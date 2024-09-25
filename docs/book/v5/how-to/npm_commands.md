@@ -6,9 +6,10 @@ To install dependencies into the `node_modules` directory run this command.
 npm install
 ```
 
-- If `npm install` fails, this could be caused by user permissions of npm. Recommendation is to install npm through `Node Version Manager`.
+> If `npm install` fails, this could be caused by user permissions of npm.
+> The recommended way to install npm is through `Node Version Manager`.
 
-The watch command compiles the components then watches the files and recompiles when one of them changes.
+The watch command compiles the components then monitors the files for changes and recompiles them.
 
 ```shell
 npm run watch

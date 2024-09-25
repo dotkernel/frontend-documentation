@@ -1,12 +1,10 @@
 # CSRF protection in forms
 
-A Cross-Site Request Forgery (CSRF) attack is a type of security vulnerability that tricks a user into performing
-actions on a web application in which they are authenticated, without their knowledge or consent.
+A Cross-Site Request Forgery (CSRF) attack is a type of security vulnerability that tricks a user into performing actions on a web application in which they are authenticated, without their knowledge or consent.
 
-Web applications can protect users against these types of attacks by implementing CSRF tokens in their forms which are
-known only to the application that generated them and must be included when submitting forms. With each visit, a new
-CSRF token is added to the form so tokens are not reusable between forms. Missing to provide a valid CSRF token will
-result in a form validation error.
+Web applications can protect users against these types of attacks by implementing CSRF tokens in their forms which are known only to the application that generated them and must be included when submitting forms.
+With each visit, a new CSRF token is added to the form so tokens are not reusable between forms.
+Failing to provide a valid CSRF token will result in a form validation error.
 
 ## Implement CSRF protection
 
@@ -30,7 +28,7 @@ $this->add(new \Laminas\Form\Element\Csrf('exampleCsrf', [
 ]));
 ```
 
-where `exampleCsrf` should be a suggestive name that describes the purpose of the field (example: `forgotPasswordCsrf`).
+> You should use a relevant name instead of `exampleCsrf` that best describes the purpose of the field (example: `forgotPasswordCsrf`).
 
 ### Validate field
 
@@ -55,7 +53,7 @@ $csrf->getValidatorChain()
 $this->add($csrf);
 ```
 
-where `exampleCsrf` must match the CSRF field's name in the form.
+Replace `exampleCsrf` with the CSRF field's name in the form.
 
 > Don't forget to modify both occurrences in this file.
 
@@ -63,8 +61,7 @@ where `exampleCsrf` must match the CSRF field's name in the form.
 
 ### Render field
 
-Open the template that renders your form and add the following code somewhere between the form's opening and closing
-tags:
+Open the template that renders your form and add the following code somewhere between the form's opening and closing tags:
 
 ```text
 {{ formElement(form.get('exampleCsrf')) }}
@@ -72,20 +69,25 @@ tags:
 
 ## Test the implementation
 
-Access your form from the browser and view its source. You should see a new hidden field, called `exampleCsrf` (or
-however you named it). After filling out the form, submitting it should work as before.
+Access your form from the browser and view its source.
+You should see a new hidden field, called `exampleCsrf` (or whatever name you used).
+After filling out the form, submitting it should work as before.
 
-In order to make sure that the new CSRF field works as expected, you can inspect the form using your browser's
-`Developer tools` and modify its value in any way. Submitting a filled out form should result in a validation error:
+In order to make sure that the new CSRF field works as expected, you can inspect the form using your browser's `Developer tools` and modify its value.
+Submitting a filled out form should result in a validation error:
 
-> **CSRF** is required and cannot be empty
+```text
+CSRF is required and cannot be empty
+```
 
 ### Timeout
 
-Note the `timeout` option in your PHP form's `exampleCsrf` field, with its default value set to **3600**. This
-represents the value in seconds for how long the token is valid. Submitting a form that has been rendered for longer
-than this value will result in a validation error:
+Note the `timeout` option in your PHP form's `exampleCsrf` field, with its default value set to **3600**.
+This represents the value in seconds for how long the token is valid.
+Submitting a form that has been rendered for longer than this value will result in a validation error:
 
-> **CSRF** is invalid
+```text
+**CSRF** is invalid
+```
 
-You can modify the value of `timeout` in each form, but the default value should work in most cases.
+> You can modify the value of `timeout` in each form, but the default value should work in most cases.

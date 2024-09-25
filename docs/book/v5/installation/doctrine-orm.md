@@ -1,12 +1,34 @@
 # Doctrine ORM
 
-## Setup database
+This step saves the database connection credentials in a Frontend configuration file.
+We do not cover the creation steps of the database itself.
 
-Make sure you fill out the database credentials in `config/autoload/local.php` under `$databases['default']`.
+## Setup database
 
 Create a new MySQL database and set its collation to `utf8mb4_general_ci`.
 
-## Running migrations
+Fill out the database credentials in `config/autoload/local.php` under `$databases['default']`.
+Below is the item you need to focus on.
+
+> `my_database`, `my_user`, `my_password` are provided only as an example.
+
+```php
+$databases = [
+    'default' => [
+        'host'     => 'localhost',
+        'dbname'   => 'my_database',
+        'user'     => 'my_user',
+        'password' => 'my_password',
+        'port'     => 3306,
+        'driver'   => 'pdo_mysql',
+        'charset'  => 'utf8mb4',
+        'collate'  => 'utf8mb4_general_ci',
+    ],
+    // you can add more database connections into this array
+];
+```
+
+## Migrations
 
 Running the migrations is done with this command
 
@@ -14,7 +36,8 @@ Running the migrations is done with this command
 php vendor/bin/doctrine-migrations migrate
 ```
 
-Note: if you have already run the phinx migrations, you may get this message
+Note: If you have already run the migrations, you may get this message.
+You should double-check to make sure the new migrations are ok to run.
 
 ```shell
 WARNING! You have x previously executed migrations in the database that are not registered migrations.
@@ -22,61 +45,40 @@ WARNING! You have x previously executed migrations in the database that are not 
 Are you sure you wish to continue? (y/n)
 ```
 
-After submitting `y`, you will get this confirmation message.
+When using an empty database, you will get this confirmation message instead.
 
 ```shell
 WARNING! You are about to execute a database migration that could result in schema changes and data loss. Are you sure you wish to continue? (y/n)
 ```
 
-Again, submit `y` to run all the migrations in chronological order. Each migration will be logged in the `migrations` table to prevent running the same migration more than once, which is often not desirable.
+Again, submit `y` to run all the migrations in chronological order.
+Each migration will be logged in the `migrations` table to prevent running the same migration more than once, which is often not desirable.
 
-## Creating migrations
-
-To generate a new migration file, use this command:
-
-```shell
-php vendor/bin/doctrine-migrations migrations:generate
-```
-
-It creates a PHP file like this one `/data/doctrine/migrations/Version20220606131835.php` that can then be edited in the IDE. You can add new queries to be executed when the migration is run (in `public function up`) and optionally queries that undo those changes (in `public function down`).
-
-Here is an example you can add in `public function up`
+If everything ran correctly, you will get this confirmation.
 
 ```shell
-$this->addSql('ALTER TABLE users ADD test VARCHAR(255) NOT NULL');
+[OK] Successfully migrated to version: Frontend\Migrations\Version20240806123413
 ```
 
-and its opposite in `public function down`
+> The migration name `Version20240806123413` may differ in future Frontend updates.
 
-```shell
-$this->addSql('ALTER TABLE users DROP test');
-```
+## Fixtures
 
-## Executing fixtures
-
-**Fixtures are used to seed the database with initial values and should only be executed ONCE, after migrating the database.**
-
-Seeding the database is done with the help of our custom package ``dotkernel/dot-data-fixtures`` built on top of doctrine/data-fixtures. See below on how to use our CLI command for listing and executing Doctrine data fixtures.
-
-An example of a fixtures class is ``data/doctrine/fixtures/RoleLoader.php``
-
-To list all the available fixtures, by order of execution, run:
-
-```shell
-php bin/doctrine fixtures:list
-```
-
-To execute all fixtures, run:
+Run this command to populate the `user_role` table with the default values:
 
 ```shell
 php bin/doctrine fixtures:execute
 ```
 
-To execute a specific fixtures, run:
+You should see our galloping horse in the command line.
 
 ```shell
-php bin/doctrine fixtures:execute --class=RoleLoader
+Executing Frontend\Fixtures\RoleLoader
+Fixtures have been loaded.
+                .''
+      ._.-.___.' (`\
+     //(        ( `'
+    '/ )\ ).__. )
+    ' <' `\ ._/'\
+       `   \     \
 ```
-
-Fixtures can and should be ordered to ensure database consistency, more on ordering fixtures can be found here :
-https://www.doctrine-project.org/projects/doctrine-data-fixtures/en/latest/how-to/fixture-ordering.html#fixture-ordering
