@@ -268,6 +268,12 @@
     <ul class="subnavigation__list collapse" id="installation">
         
         
+<li class="subnavigation__list-item ">
+    <a href="../installation-intro/" class="subnavigation__link">Introduction</a>
+</li>
+
+        
+        
 <li class="subnavigation__list-item subnavigation__list-item--active">
     <a href="./" class="subnavigation__link">Getting Started</a>
 </li>
@@ -329,59 +335,57 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <li class="subnavigation__list-item">
-    <a data-bs-toggle="collapse" href="#core-features" role="button" aria-expanded="false" aria-controls="core-features">
-        <span class="subnavigation__headline">Core Features</span>
+    <a data-bs-toggle="collapse" href="#how-to" role="button" aria-expanded="false" aria-controls="how-to">
+        <span class="subnavigation__headline">How to</span>
     </a>
-    <ul class="subnavigation__list collapse" id="core-features">
+    <ul class="subnavigation__list collapse" id="how-to">
         
         
 <li class="subnavigation__list-item ">
-    <a href="../../core-features/authorization/" class="subnavigation__link">Authorization</a>
+    <a href="../../how-to/creating-migrations/" class="subnavigation__link">Create Database Migrations</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../../core-features/npm_commands/" class="subnavigation__link">NPM Commands</a>
+    <a href="../../how-to/creating-fixtures/" class="subnavigation__link">Create Database Fixtures</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../../core-features/dependency-injection/" class="subnavigation__link">Dependency Injection</a>
+    <a href="../../how-to/authorization/" class="subnavigation__link">Configure Authorizations</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../../core-features/languages/" class="subnavigation__link">Languages</a>
+    <a href="../../how-to/npm_commands/" class="subnavigation__link">Use NPM Commands</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../../core-features/csrf/" class="subnavigation__link">CSRF</a>
+    <a href="../../how-to/dependency-injection/" class="subnavigation__link">Inject Dependencies</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../../core-features/account-anonymization/" class="subnavigation__link">Account anonymization</a>
+    <a href="../../how-to/languages/" class="subnavigation__link">Configure Languages</a>
+</li>
+
+        
+        
+<li class="subnavigation__list-item ">
+    <a href="../../how-to/csrf/" class="subnavigation__link">Set Up CSRF</a>
+</li>
+
+        
+        
+<li class="subnavigation__list-item ">
+    <a href="../../how-to/account-anonymization/" class="subnavigation__link">Anonymize Accounts</a>
 </li>
 
         
@@ -435,9 +439,28 @@
 <p>If you are using Windows as OS on your machine, you can use WSL2 as development environment.
 Read more here: <a href="https://www.dotkernel.com/php-development/almalinux-9-in-wsl2-install-php-apache-mariadb-composer-phpmyadmin/">PHP-Mariadb-on-WLS2</a></p>
 </blockquote>
-<p>Using your terminal, navigate inside the directory you want to download the project files into. Make sure that the
-directory is empty before proceeding to the download process. Once there, run the following command:</p>
+<p>Using your terminal, navigate inside the directory you want to download the project files into.</p>
+<blockquote>
+<p>Make sure that</p>
+<ul>
+<li>The directory is empty before proceeding to the download process.<ul>
+<li>You will get this error if the directory is not empty <code>fatal: destination path '.' already exists and is not an empty directory.</code> and no files will be cloned.</li>
+</ul>
+</li>
+<li>That you have writing permissions on the directory.</li>
+</ul>
+</blockquote>
+<p>Once there, run the following command:</p>
 <pre class="highlight"><code class="language-shell">git clone https://github.com/dotkernel/frontend.git .</code></pre>
+<p>If everything ran correctly, you can expect to see an output like this, though the numbers may differ.</p>
+<pre class="highlight"><code class="language-shell">Cloning into '.'...
+remote: Enumerating objects: 6901, done.
+remote: Counting objects: 100% (795/795), done.
+remote: Compressing objects: 100% (343/343), done.
+remote: Total 6901 (delta 522), reused 478 (delta 449), pack-reused 6106 (from 1)
+Receiving objects: 100% (6901/6901), 3.83 MiB | 6.42 MiB/s, done.
+Resolving deltas: 100% (3868/3868), done.</code></pre>
+<p>You can already open the project in your preferred IDE to double-check the files were copied correctly.</p>
 
 
 
@@ -447,10 +470,10 @@ directory is empty before proceeding to the download process. Once there, run th
         
         <li class="page-nav__item">
             
-                <a rel="prev" class="page-nav__link page-nav__link--prev" href="../../introduction/packages/">
+                <a rel="prev" class="page-nav__link page-nav__link--prev" href="../installation-intro/">
                     <small class="page-nav__label">Previous</small>
                     <i class="bi bi-chevron-left"></i>
-                    Packages
+                    Introduction
                 </a>
             
         </li>

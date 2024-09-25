@@ -18,11 +18,11 @@
         <meta name="docsearch:component" content="frontend">
 
         
-        <link rel="canonical" href="https://docs.dotkernel.org/frontend-documentation/v5/core-features/npm_commands/">
+        <link rel="canonical" href="https://docs.dotkernel.org/frontend-documentation/v5/how-to/dependency-injection/">
         
         <link rel="shortcut icon" href="https://docs.dotkernel.org/img/dk_docs_favicon_white.svg">
 
-        <title>NPM Commands - frontend - DotKernel Documentation</title>
+        <title>Inject Dependencies - frontend - DotKernel Documentation</title>
 
         <link rel="stylesheet" href="https://docs.dotkernel.org/css/bootstrap.css">
         <link rel="stylesheet" href="https://docs.dotkernel.org/css/bootstrap-icons.min.css">
@@ -148,12 +148,12 @@
                         
                             
                             
-                                <li class="breadcrumb-item">Core Features</li>
+                                <li class="breadcrumb-item">How to</li>
                             
                         
                     
 
-                    <li class="breadcrumb-item active" aria-current="page">NPM Commands</li>
+                    <li class="breadcrumb-item active" aria-current="page">Inject Dependencies</li>
                 
             
         </ol>
@@ -269,6 +269,12 @@
         
         
 <li class="subnavigation__list-item ">
+    <a href="../../installation/installation-intro/" class="subnavigation__link">Introduction</a>
+</li>
+
+        
+        
+<li class="subnavigation__list-item ">
     <a href="../../installation/getting-started/" class="subnavigation__link">Getting Started</a>
 </li>
 
@@ -329,59 +335,57 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <li class="subnavigation__list-item">
-    <a data-bs-toggle="collapse" href="#core-features" role="button" aria-expanded="false" aria-controls="core-features">
-        <span class="subnavigation__headline">Core Features</span>
+    <a data-bs-toggle="collapse" href="#how-to" role="button" aria-expanded="false" aria-controls="how-to">
+        <span class="subnavigation__headline">How to</span>
     </a>
-    <ul class="subnavigation__list collapse" id="core-features">
+    <ul class="subnavigation__list collapse" id="how-to">
         
         
 <li class="subnavigation__list-item ">
-    <a href="../authorization/" class="subnavigation__link">Authorization</a>
+    <a href="../creating-migrations/" class="subnavigation__link">Create Database Migrations</a>
+</li>
+
+        
+        
+<li class="subnavigation__list-item ">
+    <a href="../creating-fixtures/" class="subnavigation__link">Create Database Fixtures</a>
+</li>
+
+        
+        
+<li class="subnavigation__list-item ">
+    <a href="../authorization/" class="subnavigation__link">Configure Authorizations</a>
+</li>
+
+        
+        
+<li class="subnavigation__list-item ">
+    <a href="../npm_commands/" class="subnavigation__link">Use NPM Commands</a>
 </li>
 
         
         
 <li class="subnavigation__list-item subnavigation__list-item--active">
-    <a href="./" class="subnavigation__link">NPM Commands</a>
+    <a href="./" class="subnavigation__link">Inject Dependencies</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../dependency-injection/" class="subnavigation__link">Dependency Injection</a>
+    <a href="../languages/" class="subnavigation__link">Configure Languages</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../languages/" class="subnavigation__link">Languages</a>
+    <a href="../csrf/" class="subnavigation__link">Set Up CSRF</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../csrf/" class="subnavigation__link">CSRF</a>
-</li>
-
-        
-        
-<li class="subnavigation__list-item ">
-    <a href="../account-anonymization/" class="subnavigation__link">Account anonymization</a>
+    <a href="../account-anonymization/" class="subnavigation__link">Anonymize Accounts</a>
 </li>
 
         
@@ -403,6 +407,17 @@
 
     
     
+        <div class="toc">
+            <h6 class="toc__headline">On this page</h6>
+            <ul class="toc__list">
+            
+                <li class="toc__entry">
+                    <a href="#usage" class="toc__link nav-link">Usage</a>
+                </li>
+            
+            </ul>
+        </div>
+    
 
                     
                 </div>
@@ -415,19 +430,52 @@
 
     
     
-<!--        <h2 class="chapter__headline text-black-50">Core Features</h2>-->
+<!--        <h2 class="chapter__headline text-black-50">How to</h2>-->
     
 
-    <h1 id="npm-commands">NPM Commands</h1>
-<p>To install dependencies into the <code>node_modules</code> directory run this command.</p>
-<pre class="highlight"><code class="language-shell">npm install</code></pre>
-<ul>
-<li>If <code>npm install</code> fails, this could be caused by user permissions of npm. Recommendation is to install npm through <code>Node Version Manager</code>.</li>
-</ul>
-<p>The watch command compiles the components then watches the files and recompiles when one of them changes.</p>
-<pre class="highlight"><code class="language-shell">npm run watch</code></pre>
-<p>After all updates are done, this command compiles the assets locally, minifies them and makes them ready for production.</p>
-<pre class="highlight"><code class="language-shell">npm run prod</code></pre>
+    <h1 id="dependency-injection">Dependency Injection</h1>
+<p>Dependency injection is a design pattern used in software development to implement inversion of control.
+In simpler terms, it's the act of providing dependencies for an object during instantiation.</p>
+<p>In PHP, dependency injection can be implemented in various ways, including through constructor injection, setter injection and property injection.</p>
+<p>DotKernel Frontend, through its <a href="https://github.com/dotkernel/dot-dependency-injection">dot-dependency-injection</a> package focuses only on constructor injection.</p>
+<h2 id="usage">Usage</h2>
+<p><strong>DotKernel Frontend</strong> comes out of the box with the <a href="https://github.com/dotkernel/dot-dependency-injection">dot-dependency-injection</a> package, which provides all the functionality injecting dependencies into any object you want.</p>
+<p><code>dot-dependency-injection</code> determines the dependencies by looking at the <code>#[Inject]</code> attribute, added to the constructor of a class.
+Each dependency is specified as a separate parameter of the <code>#[Inject]</code> attribute.</p>
+<p>For our example we will inject <code>UserService</code> and <code>config</code> dependencies into a <code>UserHandler</code>.</p>
+<pre class="highlight"><code class="language-php">use Dot\DependencyInjection\Attribute\Inject;
+
+class UserHandler implements RequestHandlerInterface
+{
+    #[Inject(
+        UserService::class,
+        "config",
+    )]
+    public function __construct(
+        protected UserServiceInterface $userService,
+        protected array $config,
+    ) {
+    }
+}</code></pre>
+<blockquote>
+<p>If your class needs the value of a specific configuration key, you can specify the path using dot notation: <code>config.example</code></p>
+</blockquote>
+<p>The next step is to register the class in the <code>ConfigProvider</code> under <code>factories</code> using
+<code>Dot\DependencyInjection\Factory\AttributedServiceFactory::class</code>.</p>
+<pre class="highlight"><code class="language-php">public function getDependencies(): array
+{
+    return [
+        'factories' =&gt; [
+            UserHandler::class =&gt; AttributedServiceFactory::class
+        ]
+    ];
+}</code></pre>
+<p>That's it.
+When your object is instantiated from the container, it will automatically have its dependencies resolved.</p>
+<blockquote>
+<p>Dependencies injection is available to any object within DotKernel Frontend.
+For example, you can inject dependencies in a service, a handler and so on, simply by registering them in the <code>ConfigProvider</code>.</p>
+</blockquote>
 
 
 
@@ -437,10 +485,10 @@
         
         <li class="page-nav__item">
             
-                <a rel="prev" class="page-nav__link page-nav__link--prev" href="../authorization/">
+                <a rel="prev" class="page-nav__link page-nav__link--prev" href="../npm_commands/">
                     <small class="page-nav__label">Previous</small>
                     <i class="bi bi-chevron-left"></i>
-                    Authorization
+                    Use NPM Commands
                 </a>
             
         </li>
@@ -448,9 +496,9 @@
         
         <li class="page-nav__item">
             
-                <a rel="next" class="page-nav__link page-nav__link--next" href="../dependency-injection/">
+                <a rel="next" class="page-nav__link page-nav__link--next" href="../languages/">
                     <small class="page-nav__label">Next</small>
-                    Dependency Injection
+                    Configure Languages
                     <i class="bi bi-chevron-right"></i>
                 </a>
             

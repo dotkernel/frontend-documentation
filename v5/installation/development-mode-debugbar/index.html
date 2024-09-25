@@ -269,6 +269,12 @@
         
         
 <li class="subnavigation__list-item ">
+    <a href="../installation-intro/" class="subnavigation__link">Introduction</a>
+</li>
+
+        
+        
+<li class="subnavigation__list-item ">
     <a href="../getting-started/" class="subnavigation__link">Getting Started</a>
 </li>
 
@@ -329,59 +335,57 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <li class="subnavigation__list-item">
-    <a data-bs-toggle="collapse" href="#core-features" role="button" aria-expanded="false" aria-controls="core-features">
-        <span class="subnavigation__headline">Core Features</span>
+    <a data-bs-toggle="collapse" href="#how-to" role="button" aria-expanded="false" aria-controls="how-to">
+        <span class="subnavigation__headline">How to</span>
     </a>
-    <ul class="subnavigation__list collapse" id="core-features">
+    <ul class="subnavigation__list collapse" id="how-to">
         
         
 <li class="subnavigation__list-item ">
-    <a href="../../core-features/authorization/" class="subnavigation__link">Authorization</a>
+    <a href="../../how-to/creating-migrations/" class="subnavigation__link">Create Database Migrations</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../../core-features/npm_commands/" class="subnavigation__link">NPM Commands</a>
+    <a href="../../how-to/creating-fixtures/" class="subnavigation__link">Create Database Fixtures</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../../core-features/dependency-injection/" class="subnavigation__link">Dependency Injection</a>
+    <a href="../../how-to/authorization/" class="subnavigation__link">Configure Authorizations</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../../core-features/languages/" class="subnavigation__link">Languages</a>
+    <a href="../../how-to/npm_commands/" class="subnavigation__link">Use NPM Commands</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../../core-features/csrf/" class="subnavigation__link">CSRF</a>
+    <a href="../../how-to/dependency-injection/" class="subnavigation__link">Inject Dependencies</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../../core-features/account-anonymization/" class="subnavigation__link">Account anonymization</a>
+    <a href="../../how-to/languages/" class="subnavigation__link">Configure Languages</a>
+</li>
+
+        
+        
+<li class="subnavigation__list-item ">
+    <a href="../../how-to/csrf/" class="subnavigation__link">Set Up CSRF</a>
+</li>
+
+        
+        
+<li class="subnavigation__list-item ">
+    <a href="../../how-to/account-anonymization/" class="subnavigation__link">Anonymize Accounts</a>
 </li>
 
         
@@ -430,8 +434,12 @@
     
 
     <h1 id="development-mode">Development mode</h1>
-<p>Run this command to enable dev mode by turning debug flag to <code>true</code> and turning configuration caching to <code>off</code>. It will also make sure that any existing config cache is cleared.</p>
+<p>Run this command to enable dev mode by turning debug flag to <code>true</code> and turning configuration caching to <code>off</code>.
+It will also make sure that any existing config cache is cleared.</p>
 <pre class="highlight"><code class="language-shell">composer development-enable</code></pre>
+<p>You should see this in the command prompt:</p>
+<pre class="highlight"><code class="language-shell">&gt; laminas-development-mode enable
+You are now in development mode.</code></pre>
 <ul>
 <li>If not already done, remove the <code>.dist</code> extension from <code>config/autoload/development.global.php.dist</code>.</li>
 </ul>

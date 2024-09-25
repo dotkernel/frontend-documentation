@@ -18,11 +18,11 @@
         <meta name="docsearch:component" content="frontend">
 
         
-        <link rel="canonical" href="https://docs.dotkernel.org/frontend-documentation/v5/core-features/dependency-injection/">
+        <link rel="canonical" href="https://docs.dotkernel.org/frontend-documentation/v5/how-to/creating-fixtures/">
         
         <link rel="shortcut icon" href="https://docs.dotkernel.org/img/dk_docs_favicon_white.svg">
 
-        <title>Dependency Injection - frontend - DotKernel Documentation</title>
+        <title>Create Database Fixtures - frontend - DotKernel Documentation</title>
 
         <link rel="stylesheet" href="https://docs.dotkernel.org/css/bootstrap.css">
         <link rel="stylesheet" href="https://docs.dotkernel.org/css/bootstrap-icons.min.css">
@@ -148,12 +148,12 @@
                         
                             
                             
-                                <li class="breadcrumb-item">Core Features</li>
+                                <li class="breadcrumb-item">How to</li>
                             
                         
                     
 
-                    <li class="breadcrumb-item active" aria-current="page">Dependency Injection</li>
+                    <li class="breadcrumb-item active" aria-current="page">Create Database Fixtures</li>
                 
             
         </ol>
@@ -269,6 +269,12 @@
         
         
 <li class="subnavigation__list-item ">
+    <a href="../../installation/installation-intro/" class="subnavigation__link">Introduction</a>
+</li>
+
+        
+        
+<li class="subnavigation__list-item ">
     <a href="../../installation/getting-started/" class="subnavigation__link">Getting Started</a>
 </li>
 
@@ -329,59 +335,57 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <li class="subnavigation__list-item">
-    <a data-bs-toggle="collapse" href="#core-features" role="button" aria-expanded="false" aria-controls="core-features">
-        <span class="subnavigation__headline">Core Features</span>
+    <a data-bs-toggle="collapse" href="#how-to" role="button" aria-expanded="false" aria-controls="how-to">
+        <span class="subnavigation__headline">How to</span>
     </a>
-    <ul class="subnavigation__list collapse" id="core-features">
+    <ul class="subnavigation__list collapse" id="how-to">
         
         
 <li class="subnavigation__list-item ">
-    <a href="../authorization/" class="subnavigation__link">Authorization</a>
-</li>
-
-        
-        
-<li class="subnavigation__list-item ">
-    <a href="../npm_commands/" class="subnavigation__link">NPM Commands</a>
+    <a href="../creating-migrations/" class="subnavigation__link">Create Database Migrations</a>
 </li>
 
         
         
 <li class="subnavigation__list-item subnavigation__list-item--active">
-    <a href="./" class="subnavigation__link">Dependency Injection</a>
+    <a href="./" class="subnavigation__link">Create Database Fixtures</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../languages/" class="subnavigation__link">Languages</a>
+    <a href="../authorization/" class="subnavigation__link">Configure Authorizations</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../csrf/" class="subnavigation__link">CSRF</a>
+    <a href="../npm_commands/" class="subnavigation__link">Use NPM Commands</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../account-anonymization/" class="subnavigation__link">Account anonymization</a>
+    <a href="../dependency-injection/" class="subnavigation__link">Inject Dependencies</a>
+</li>
+
+        
+        
+<li class="subnavigation__list-item ">
+    <a href="../languages/" class="subnavigation__link">Configure Languages</a>
+</li>
+
+        
+        
+<li class="subnavigation__list-item ">
+    <a href="../csrf/" class="subnavigation__link">Set Up CSRF</a>
+</li>
+
+        
+        
+<li class="subnavigation__list-item ">
+    <a href="../account-anonymization/" class="subnavigation__link">Anonymize Accounts</a>
 </li>
 
         
@@ -408,7 +412,7 @@
             <ul class="toc__list">
             
                 <li class="toc__entry">
-                    <a href="#usage" class="toc__link nav-link">Usage</a>
+                    <a href="#working-with-fixtures" class="toc__link nav-link">Working with fixtures</a>
                 </li>
             
             </ul>
@@ -426,57 +430,26 @@
 
     
     
-<!--        <h2 class="chapter__headline text-black-50">Core Features</h2>-->
+<!--        <h2 class="chapter__headline text-black-50">How to</h2>-->
     
 
-    <h1 id="dependency-injection">Dependency Injection</h1>
-<p>Dependency injection is a design pattern used in software development to implement inversion of control. In simpler
-terms, it's the act of providing dependencies for an object during instantiation.</p>
-<p>In PHP, dependency injection can be implemented in various ways, including through constructor injection, setter
-injection and property injection.</p>
-<p>DotKernel API, through its <a href="https://github.com/dotkernel/dot-dependency-injection">dot-dependency-injection</a> package
-focuses only on constructor injection.</p>
-<h2 id="usage">Usage</h2>
-<p><strong>DotKernel API</strong> comes out of the box with the
-<a href="https://github.com/dotkernel/dot-dependency-injection">dot-dependency-injection</a> package, which provides all we need for
-injecting dependencies into any object you want.</p>
-<p><code>dot-dependency-injection</code> determines the dependencies by looking at the <code>#[Inject]</code> attribute, added to the constructor
-of a class. Dependencies are specified as separate parameters of the <code>#[Inject]</code> attribute.</p>
-<p>For our example we will inject <code>UserService</code> and <code>config</code> dependencies into a <code>UseHandler</code>.</p>
-<pre class="highlight"><code class="language-php">use Dot\DependencyInjection\Attribute\Inject;
-
-class UserHandler implements RequestHandlerInterface
-{
-    #[Inject(
-        UserService::class,
-        "config",
-    )]
-    public function __construct(
-        protected UserServiceInterface $userService,
-        protected array $config,
-    ) {
-    }
-}</code></pre>
+    <h1 id="fixtures">Fixtures</h1>
 <blockquote>
-<p>If your class needs the value of a specific configuration key, you can specify the path using dot notation:
-<code>config.example</code></p>
+<p>Fixtures are used to seed the database with initial values and should only be executed ONCE each, after migrating the database.</p>
 </blockquote>
-<p>The next step is to register the class in the <code>ConfigProvider</code> under <code>factories</code> using
-<code>Dot\DependencyInjection\Factory\AttributedServiceFactory::class</code></p>
-<pre class="highlight"><code class="language-php">public function getDependencies(): array
-{
-    return [
-        'factories' =&gt; [
-            UserHandler::class =&gt; AttributedServiceFactory::class
-        ]
-    ];
-}</code></pre>
-<p>That's it. When your object is instantiated from the container, it will automatically have its
-dependencies resolved.</p>
-<blockquote>
-<p>Dependencies injection is available to any object within DotKernel API. For example, you can inject dependencies in a
-service, a handler and so on, simply by registering it in the <code>ConfigProvider</code>.</p>
-</blockquote>
+<p>Seeding the database is done with the help of our custom package <code>dotkernel/dot-data-fixtures</code> built on top of <code>doctrine/data-fixtures</code>.
+See below on how to use our CLI command for listing and executing Doctrine data fixtures.</p>
+<h2 id="working-with-fixtures">Working with fixtures</h2>
+<p>You can find an example of a fixtures class in <code>data/doctrine/fixtures/RoleLoader.php</code>.</p>
+<p>To list all the available fixtures by order of execution run:</p>
+<pre class="highlight"><code class="language-shell">php bin/doctrine fixtures:list</code></pre>
+<p>To execute all fixtures run:</p>
+<pre class="highlight"><code class="language-shell">php bin/doctrine fixtures:execute</code></pre>
+<p>To execute a specific fixture, use its class name, like in this example:</p>
+<pre class="highlight"><code class="language-shell">php bin/doctrine fixtures:execute --class=RoleLoader</code></pre>
+<p>Fixtures can and should be ordered to ensure database consistency.
+More on ordering fixtures can be found here :
+https://www.doctrine-project.org/projects/doctrine-data-fixtures/en/latest/how-to/fixture-ordering.html#fixture-ordering</p>
 
 
 
@@ -486,10 +459,10 @@ service, a handler and so on, simply by registering it in the <code>ConfigProvid
         
         <li class="page-nav__item">
             
-                <a rel="prev" class="page-nav__link page-nav__link--prev" href="../npm_commands/">
+                <a rel="prev" class="page-nav__link page-nav__link--prev" href="../creating-migrations/">
                     <small class="page-nav__label">Previous</small>
                     <i class="bi bi-chevron-left"></i>
-                    NPM Commands
+                    Create Database Migrations
                 </a>
             
         </li>
@@ -497,9 +470,9 @@ service, a handler and so on, simply by registering it in the <code>ConfigProvid
         
         <li class="page-nav__item">
             
-                <a rel="next" class="page-nav__link page-nav__link--next" href="../languages/">
+                <a rel="next" class="page-nav__link page-nav__link--next" href="../authorization/">
                     <small class="page-nav__label">Next</small>
-                    Languages
+                    Configure Authorizations
                     <i class="bi bi-chevron-right"></i>
                 </a>
             

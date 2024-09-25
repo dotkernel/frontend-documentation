@@ -18,11 +18,11 @@
         <meta name="docsearch:component" content="frontend">
 
         
-        <link rel="canonical" href="https://docs.dotkernel.org/frontend-documentation/v5/core-features/authorization/">
+        <link rel="canonical" href="https://docs.dotkernel.org/frontend-documentation/v5/how-to/creating-migrations/">
         
         <link rel="shortcut icon" href="https://docs.dotkernel.org/img/dk_docs_favicon_white.svg">
 
-        <title>Authorization - frontend - DotKernel Documentation</title>
+        <title>Create Database Migrations - frontend - DotKernel Documentation</title>
 
         <link rel="stylesheet" href="https://docs.dotkernel.org/css/bootstrap.css">
         <link rel="stylesheet" href="https://docs.dotkernel.org/css/bootstrap-icons.min.css">
@@ -148,12 +148,12 @@
                         
                             
                             
-                                <li class="breadcrumb-item">Core Features</li>
+                                <li class="breadcrumb-item">How to</li>
                             
                         
                     
 
-                    <li class="breadcrumb-item active" aria-current="page">Authorization</li>
+                    <li class="breadcrumb-item active" aria-current="page">Create Database Migrations</li>
                 
             
         </ol>
@@ -269,6 +269,12 @@
         
         
 <li class="subnavigation__list-item ">
+    <a href="../../installation/installation-intro/" class="subnavigation__link">Introduction</a>
+</li>
+
+        
+        
+<li class="subnavigation__list-item ">
     <a href="../../installation/getting-started/" class="subnavigation__link">Getting Started</a>
 </li>
 
@@ -329,59 +335,57 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <li class="subnavigation__list-item">
-    <a data-bs-toggle="collapse" href="#core-features" role="button" aria-expanded="false" aria-controls="core-features">
-        <span class="subnavigation__headline">Core Features</span>
+    <a data-bs-toggle="collapse" href="#how-to" role="button" aria-expanded="false" aria-controls="how-to">
+        <span class="subnavigation__headline">How to</span>
     </a>
-    <ul class="subnavigation__list collapse" id="core-features">
+    <ul class="subnavigation__list collapse" id="how-to">
         
         
 <li class="subnavigation__list-item subnavigation__list-item--active">
-    <a href="./" class="subnavigation__link">Authorization</a>
+    <a href="./" class="subnavigation__link">Create Database Migrations</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../npm_commands/" class="subnavigation__link">NPM Commands</a>
+    <a href="../creating-fixtures/" class="subnavigation__link">Create Database Fixtures</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../dependency-injection/" class="subnavigation__link">Dependency Injection</a>
+    <a href="../authorization/" class="subnavigation__link">Configure Authorizations</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../languages/" class="subnavigation__link">Languages</a>
+    <a href="../npm_commands/" class="subnavigation__link">Use NPM Commands</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../csrf/" class="subnavigation__link">CSRF</a>
+    <a href="../dependency-injection/" class="subnavigation__link">Inject Dependencies</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../account-anonymization/" class="subnavigation__link">Account anonymization</a>
+    <a href="../languages/" class="subnavigation__link">Configure Languages</a>
+</li>
+
+        
+        
+<li class="subnavigation__list-item ">
+    <a href="../csrf/" class="subnavigation__link">Set Up CSRF</a>
+</li>
+
+        
+        
+<li class="subnavigation__list-item ">
+    <a href="../account-anonymization/" class="subnavigation__link">Anonymize Accounts</a>
 </li>
 
         
@@ -403,6 +407,17 @@
 
     
     
+        <div class="toc">
+            <h6 class="toc__headline">On this page</h6>
+            <ul class="toc__list">
+            
+                <li class="toc__entry">
+                    <a href="#example" class="toc__link nav-link">Example</a>
+                </li>
+            
+            </ul>
+        </div>
+    
 
                     
                 </div>
@@ -415,53 +430,25 @@
 
     
     
-<!--        <h2 class="chapter__headline text-black-50">Core Features</h2>-->
+<!--        <h2 class="chapter__headline text-black-50">How to</h2>-->
     
 
-    <h1 id="authorization-guards">Authorization Guards</h1>
-<p>The packages responsible for restricting access to certain parts of the application are <a href="https://github.com/dotkernel/dot-rbac-guard">dot-rbac-guard</a> and <a href="https://github.com/dotkernel/dot-rbac">dot-rbac</a>. These packages work together to create an infrastructure that is customizable and diversified to manage user access to the platform by specifying the type of role the user has.</p>
-<p>The <code>authorization.global.php</code> file provides multiple configurations specifying multiple roles as well as the types of permissions to which these roles have access.</p>
-<pre class="highlight"><code class="language-php">//example of a flat RBAC model that specifies two types of roles as well as their permission
-    'roles' =&gt; [
-                'admin' =&gt; [
-                    'permissions' =&gt; [
-                        'authenticated',
-                        'edit',
-                        'delete',
-                        //etc..
-                    ]
-                ],
-                'user' =&gt; [
-                    'permissions' =&gt; [
-                        'authenticated',
-                        //etc..
-                    ]
-                ]
-            ]</code></pre>
-<p>The <code>authorization-guards.global.php</code> file provides configuration to restrict access to certain actions based on the permissions defined in <code>authorization.global.php</code> so basically we have to add the permissions in the dot-rbac configuration file first to specify the action restriction permissions.</p>
-<pre class="highlight"><code class="language-php">// configuration example to restrict certain actions of some routes based on the permissions specified in the dot-rbac configuration file
-    'rules' =&gt; [
-                    [
-                        'route' =&gt; 'account',
-                        'actions' =&gt; [//list of actions to apply , or empty array for all actions
-                            'unregister',
-                            'avatar',
-                            'details',
-                            'changePassword'
-                        ],
-                        'permissions' =&gt; ['authenticated']
-                    ],
-                    [
-                        'route' =&gt; 'admin',
-                        'actions' =&gt; [
-                            'deleteAccount'
-                        ],
-                         'permissions' =&gt; [
-                            'delete'
-                            //list of roles to allow
-                        ]
-                    ]
-                ]</code></pre>
+    <h1 id="creating-migrations">Creating migrations</h1>
+<p>Migrations are used to create and/or edit the database structure.
+To generate a new migration file, use this command:</p>
+<pre class="highlight"><code class="language-shell">php vendor/bin/doctrine-migrations migrations:generate</code></pre>
+<p>It creates a PHP file like this one <code>/data/doctrine/migrations/Version20220606131835.php</code> that can then be edited in the IDE.
+You can add new queries in:</p>
+<ul>
+<li><code>public function up</code> - these are executed when the migration is run.</li>
+<li><code>public function down</code> - these are optional queries that undo the above changes.</li>
+</ul>
+<h2 id="example">Example</h2>
+<p>This example creates a new column named <code>test</code>.
+Add this in <code>public function up</code>:</p>
+<pre class="highlight"><code class="language-shell">$this-&gt;addSql('ALTER TABLE users ADD test VARCHAR(255) NOT NULL');</code></pre>
+<p>And its opposite in <code>public function down</code>:</p>
+<pre class="highlight"><code class="language-shell">$this-&gt;addSql('ALTER TABLE users DROP test');</code></pre>
 
 
 
@@ -482,9 +469,9 @@
         
         <li class="page-nav__item">
             
-                <a rel="next" class="page-nav__link page-nav__link--next" href="../npm_commands/">
+                <a rel="next" class="page-nav__link page-nav__link--next" href="../creating-fixtures/">
                     <small class="page-nav__label">Next</small>
-                    NPM Commands
+                    Create Database Fixtures
                     <i class="bi bi-chevron-right"></i>
                 </a>
             

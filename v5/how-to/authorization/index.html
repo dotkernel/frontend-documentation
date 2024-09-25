@@ -18,11 +18,11 @@
         <meta name="docsearch:component" content="frontend">
 
         
-        <link rel="canonical" href="https://docs.dotkernel.org/frontend-documentation/v5/introduction/file-structure/">
+        <link rel="canonical" href="https://docs.dotkernel.org/frontend-documentation/v5/how-to/authorization/">
         
         <link rel="shortcut icon" href="https://docs.dotkernel.org/img/dk_docs_favicon_white.svg">
 
-        <title>File Structure - frontend - DotKernel Documentation</title>
+        <title>Configure Authorizations - frontend - DotKernel Documentation</title>
 
         <link rel="stylesheet" href="https://docs.dotkernel.org/css/bootstrap.css">
         <link rel="stylesheet" href="https://docs.dotkernel.org/css/bootstrap-icons.min.css">
@@ -148,12 +148,12 @@
                         
                             
                             
-                                <li class="breadcrumb-item">Overview</li>
+                                <li class="breadcrumb-item">How to</li>
                             
                         
                     
 
-                    <li class="breadcrumb-item active" aria-current="page">File Structure</li>
+                    <li class="breadcrumb-item active" aria-current="page">Configure Authorizations</li>
                 
             
         </ol>
@@ -181,7 +181,7 @@
                     
                         
 <li class="subnavigation__list-item ">
-    <a href="../introduction/" class="subnavigation__link">Introduction</a>
+    <a href="../../introduction/introduction/" class="subnavigation__link">Introduction</a>
 </li>
 
                     
@@ -213,19 +213,19 @@
         
         
 <li class="subnavigation__list-item ">
-    <a href="../server-requirements/" class="subnavigation__link">Server Requirements</a>
-</li>
-
-        
-        
-<li class="subnavigation__list-item subnavigation__list-item--active">
-    <a href="./" class="subnavigation__link">File Structure</a>
+    <a href="../../introduction/server-requirements/" class="subnavigation__link">Server Requirements</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../packages/" class="subnavigation__link">Packages</a>
+    <a href="../../introduction/file-structure/" class="subnavigation__link">File Structure</a>
+</li>
+
+        
+        
+<li class="subnavigation__list-item ">
+    <a href="../../introduction/packages/" class="subnavigation__link">Packages</a>
 </li>
 
         
@@ -343,49 +343,49 @@
         
         
 <li class="subnavigation__list-item ">
-    <a href="../../how-to/creating-migrations/" class="subnavigation__link">Create Database Migrations</a>
+    <a href="../creating-migrations/" class="subnavigation__link">Create Database Migrations</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../../how-to/creating-fixtures/" class="subnavigation__link">Create Database Fixtures</a>
+    <a href="../creating-fixtures/" class="subnavigation__link">Create Database Fixtures</a>
+</li>
+
+        
+        
+<li class="subnavigation__list-item subnavigation__list-item--active">
+    <a href="./" class="subnavigation__link">Configure Authorizations</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../../how-to/authorization/" class="subnavigation__link">Configure Authorizations</a>
+    <a href="../npm_commands/" class="subnavigation__link">Use NPM Commands</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../../how-to/npm_commands/" class="subnavigation__link">Use NPM Commands</a>
+    <a href="../dependency-injection/" class="subnavigation__link">Inject Dependencies</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../../how-to/dependency-injection/" class="subnavigation__link">Inject Dependencies</a>
+    <a href="../languages/" class="subnavigation__link">Configure Languages</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../../how-to/languages/" class="subnavigation__link">Configure Languages</a>
+    <a href="../csrf/" class="subnavigation__link">Set Up CSRF</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../../how-to/csrf/" class="subnavigation__link">Set Up CSRF</a>
-</li>
-
-        
-        
-<li class="subnavigation__list-item ">
-    <a href="../../how-to/account-anonymization/" class="subnavigation__link">Anonymize Accounts</a>
+    <a href="../account-anonymization/" class="subnavigation__link">Anonymize Accounts</a>
 </li>
 
         
@@ -407,33 +407,6 @@
 
     
     
-        <div class="toc">
-            <h6 class="toc__headline">On this page</h6>
-            <ul class="toc__list">
-            
-                <li class="toc__entry">
-                    <a href="#main-directories" class="toc__link nav-link">Main directories</a>
-                </li>
-            
-                <li class="toc__entry">
-                    <a href="#special-purpose-folders" class="toc__link nav-link">Special purpose folders</a>
-                </li>
-            
-                <li class="toc__entry">
-                    <a href="#src-directory" class="toc__link nav-link">src directory</a>
-                </li>
-            
-                <li class="toc__entry">
-                    <a href="#templates-directory" class="toc__link nav-link">templates directory</a>
-                </li>
-            
-                <li class="toc__entry">
-                    <a href="#data-directory" class="toc__link nav-link">data directory</a>
-                </li>
-            
-            </ul>
-        </div>
-    
 
                     
                 </div>
@@ -446,63 +419,54 @@
 
     
     
-<!--        <h2 class="chapter__headline text-black-50">Overview</h2>-->
+<!--        <h2 class="chapter__headline text-black-50">How to</h2>-->
     
 
-    <h1 id="file-structure">File structure</h1>
-<p>Dotkernel Frontend follows the <a href="https://www.php-fig.org/psr/psr-4/">PSR-4</a> standards.</p>
-<p>It is a good practice to standardize the file structure of projects.</p>
-<p>When using DotKernel Frontend the following structure is installed by default:</p>
-<p><img alt="Dotkernel Frontend File Structure!" src="https://docs.dotkernel.org/img/frontend/file-structure-dk-frontend.png" class="img-responsive"/></p>
-<h2 id="main-directories">Main directories</h2>
-<ul>
-<li><code>bin</code> - Executable files from CLI</li>
-<li><code>config</code> - Various configuration files</li>
-<li><code>data</code> - Should contain project-related data (AVOID storing sensitive data on VCS)</li>
-<li><code>documentation</code> - Should contain project-related documentation</li>
-<li><code>log</code> - Storage of log files generated by dot-error-log library</li>
-<li><code>public</code> - Publicly visible files. The webserver need to have this folder as www-document root folder.</li>
-<li><code>src</code> - Should contain the source code files</li>
-<li><code>test</code> - Should contain the test files</li>
-</ul>
-<h2 id="special-purpose-folders">Special purpose folders</h2>
-<ul>
-<li><code>.github</code>  - Contains workflow files</li>
-<li><code>.laminas-ci</code> - Contains laminas-ci workflow files</li>
-</ul>
-<h2 id="src-directory"><code>src</code> directory</h2>
-<p>This directory contains all source code related to the Module.
-It should contain the following directories, if they’re not empty:</p>
-<ul>
-<li>Handler - Action classes (similar to Controllers but can only perform one action)</li>
-<li>Entity - Database entities</li>
-<li>Service - Service classes</li>
-<li>Collection - Database entities collections</li>
-<li>Repository - Entity repository folder</li>
-</ul>
-<blockquote>
-<p>The above example lists just a part of the directories in a project, but it should give you an idea of what the structure should look like.</p>
-</blockquote>
-<p>Other classes in the <code>src</code> directory may include <code>InputFilter</code>, <code>EventListener</code>, <code>Helper</code>, <code>Command</code>, <code>Factory</code> etc.</p>
-<p>The <code>src</code> directory should also contain 2 files:</p>
-<ul>
-<li><code>ConfigProvider.php</code> - Provides configuration data</li>
-<li><code>RoutesDelegator.php</code> - Module main routes entry file</li>
-</ul>
-<h2 id="templates-directory"><code>templates</code> directory</h2>
-<p>This directory contains the template files, used for example to help render e-mail templates.</p>
-<blockquote>
-<p>DotKernel Frontend uses <code>twig</code> as Templating Engine.
-All template files have the extension <code>.html.twig</code>.</p>
-</blockquote>
-<h2 id="data-directory"><code>data</code> directory</h2>
-<p>This directory contains project-related data, like cache and file uploads.</p>
-<p>We recommend using the following directory structure:</p>
-<ul>
-<li><code>data/cache</code> - Location where caches are stored</li>
-<li><code>data/doctrine</code> - Fixtures and migrations</li>
-<li><code>data/lock</code> - Lock files generated by <a href="https://docs.dotkernel.org/dot-cli/v3/lock-files/">dotkernel/dot-cli</a></li>
-</ul>
+    <h1 id="authorization-guards">Authorization Guards</h1>
+<p>The packages responsible for restricting access to certain parts of the application are <a href="https://github.com/dotkernel/dot-rbac-guard">dot-rbac-guard</a> and <a href="https://github.com/dotkernel/dot-rbac">dot-rbac</a>.
+These packages work together to create an infrastructure that is customizable and diversified to manage user access to the platform by specifying the type of role the user has.</p>
+<p>The <code>authorization.global.php</code> file provides multiple configurations specifying multiple roles as well as the types of permissions to which these roles have access.</p>
+<pre class="highlight"><code class="language-php">//example of a flat RBAC model that specifies two types of roles as well as their permission
+    'roles' =&gt; [
+                'admin' =&gt; [
+                    'permissions' =&gt; [
+                        'authenticated',
+                        'edit',
+                        'delete',
+                        //etc..
+                    ]
+                ],
+                'user' =&gt; [
+                    'permissions' =&gt; [
+                        'authenticated',
+                        //etc..
+                    ]
+                ]
+            ]</code></pre>
+<p>The <code>authorization-guards.global.php</code> file provides configuration to restrict access to certain actions based on the permissions defined in <code>authorization.global.php</code> so basically we have to add the permissions in the dot-rbac configuration file first to specify the action restriction permissions.</p>
+<pre class="highlight"><code class="language-php">// configuration example to restrict certain actions of some routes based on the permissions specified in the dot-rbac configuration file
+    'rules' =&gt; [
+                    [
+                        'route' =&gt; 'account',
+                        'actions' =&gt; [//list of actions to apply , or empty array for all actions
+                            'unregister',
+                            'avatar',
+                            'details',
+                            'changePassword'
+                        ],
+                        'permissions' =&gt; ['authenticated']
+                    ],
+                    [
+                        'route' =&gt; 'admin',
+                        'actions' =&gt; [
+                            'deleteAccount'
+                        ],
+                         'permissions' =&gt; [
+                            'delete'
+                            //list of roles to allow
+                        ]
+                    ]
+                ]</code></pre>
 
 
 
@@ -512,10 +476,10 @@ All template files have the extension <code>.html.twig</code>.</p>
         
         <li class="page-nav__item">
             
-                <a rel="prev" class="page-nav__link page-nav__link--prev" href="../server-requirements/">
+                <a rel="prev" class="page-nav__link page-nav__link--prev" href="../creating-fixtures/">
                     <small class="page-nav__label">Previous</small>
                     <i class="bi bi-chevron-left"></i>
-                    Server Requirements
+                    Create Database Fixtures
                 </a>
             
         </li>
@@ -523,9 +487,9 @@ All template files have the extension <code>.html.twig</code>.</p>
         
         <li class="page-nav__item">
             
-                <a rel="next" class="page-nav__link page-nav__link--next" href="../packages/">
+                <a rel="next" class="page-nav__link page-nav__link--next" href="../npm_commands/">
                     <small class="page-nav__label">Next</small>
-                    Packages
+                    Use NPM Commands
                     <i class="bi bi-chevron-right"></i>
                 </a>
             
