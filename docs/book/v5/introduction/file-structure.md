@@ -4,7 +4,7 @@ Dotkernel Frontend follows the [PSR-4](https://www.php-fig.org/psr/psr-4/) stand
 
 It is a good practice to standardize the file structure of projects.
 
-When using DotKernel Frontend the following structure is installed by default:
+When using Dotkernel Frontend the following structure is installed by default:
 
 ![Dotkernel Frontend File Structure!](https://docs.dotkernel.org/img/frontend/file-structure-dk-frontend.png)
 
@@ -48,7 +48,7 @@ The `src` directory should also contain 2 files:
 
 This directory contains the template files, used for example to help render e-mail templates.
 
-> DotKernel Frontend uses `twig` as Templating Engine.
+> Dotkernel Frontend uses `twig` as Templating Engine.
 > All template files have the extension `.html.twig`.
 
 ## `data` directory

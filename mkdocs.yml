@@ -32,7 +32,7 @@ nav:
           - "Set Up CSRF": v5/how-to/csrf.md
           - "Anonymize Accounts": v5/how-to/account-anonymization.md
 site_name: frontend
-site_description: "DotKernel Frontend"
+site_description: "Dotkernel Frontend"
 repo_url: "https://github.com/dotkernel/frontend"
 plugins:
   - search

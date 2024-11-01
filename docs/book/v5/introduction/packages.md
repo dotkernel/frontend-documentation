@@ -1,7 +1,7 @@
 # Packages
 
 * `dotkernel/dot-dependency-injection` - Dependency injection component using class attributes.
-* `dotkernel/dot-authorization` - Authorization base package defining interfaces for authorization services to be used with DotKernel applications
+* `dotkernel/dot-authorization` - Authorization base package defining interfaces for authorization services to be used with Dotkernel applications
 * `dotkernel/dot-controller` - Provides base classes for action based controllers similar to Laminas controller component
 * `dotkernel/dot-data-fixtures` - Provides a CLI interface for listing & executing doctrine data fixtures
 * `dotkernel/dot-debugbar` - Wrapper on top of maximebf/php-debugbar
@@ -11,8 +11,8 @@
 * `dotkernel/dot-navigation` - Allows you to easily define and parse menus inside templates, configuration based approach
 * `dotkernel/dot-rbac-guard` - Defines authorization guards that authorize users for accessing certain parts of an application based on various criteria
 * `dotkernel/dot-response-header` - Middleware for setting custom response headers
-* `dotkernel/dot-session` - DotKernel session component extending and customizing laminas-session
-* `dotkernel/dot-twigrenderer` - DotKernel component providing twig extensions and customizations
+* `dotkernel/dot-session` - Dotkernel session component extending and customizing laminas-session
+* `dotkernel/dot-twigrenderer` - Dotkernel component providing twig extensions and customizations
 * `friendsofphp/proxy-manager-lts` - Fork of ocramius/proxy-manager
 * `laminas/laminas-component-installer` - Composer plugin for injecting modules and configuration providers into application configuration
 * `laminas/laminas-config-aggregator` - Lightweight library for collecting and merging configuration from different sources

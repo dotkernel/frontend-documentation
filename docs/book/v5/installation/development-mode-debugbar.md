@@ -18,7 +18,7 @@ You are now in development mode.
 
 ## Using DebugBar
 
-DotKernel comes with its own DebugBar already installed and configured. It is enabled when you clone the config file `config/autoload/debugbar.local.php.dist` as `config/autoload/debugbar.local.php`. You can disable the tool by going into its config file `config/autoload/debugbar.local.php` and changing
+Dotkernel comes with its own DebugBar already installed and configured. It is enabled when you clone the config file `config/autoload/debugbar.local.php.dist` as `config/autoload/debugbar.local.php`. You can disable the tool by going into its config file `config/autoload/debugbar.local.php` and changing
 
 ```php
 'enabled' => true

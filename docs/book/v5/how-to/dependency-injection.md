@@ -5,11 +5,11 @@ In simpler terms, it's the act of providing dependencies for an object during in
 
 In PHP, dependency injection can be implemented in various ways, including through constructor injection, setter injection and property injection.
 
-DotKernel Frontend, through its [dot-dependency-injection](https://github.com/dotkernel/dot-dependency-injection) package focuses only on constructor injection.
+Dotkernel Frontend, through its [dot-dependency-injection](https://github.com/dotkernel/dot-dependency-injection) package focuses only on constructor injection.
 
 ## Usage
 
-**DotKernel Frontend** comes out of the box with the [dot-dependency-injection](https://github.com/dotkernel/dot-dependency-injection) package, which provides all the functionality injecting dependencies into any object you want.
+**Dotkernel Frontend** comes out of the box with the [dot-dependency-injection](https://github.com/dotkernel/dot-dependency-injection) package, which provides all the functionality injecting dependencies into any object you want.
 
 `dot-dependency-injection` determines the dependencies by looking at the `#[Inject]` attribute, added to the constructor of a class.
 Each dependency is specified as a separate parameter of the `#[Inject]` attribute.
@@ -52,5 +52,5 @@ public function getDependencies(): array
 That's it.
 When your object is instantiated from the container, it will automatically have its dependencies resolved.
 
-> Dependencies injection is available to any object within DotKernel Frontend.
+> Dependencies injection is available to any object within Dotkernel Frontend.
 > For example, you can inject dependencies in a service, a handler and so on, simply by registering them in the `ConfigProvider`.

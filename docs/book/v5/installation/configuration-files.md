@@ -38,7 +38,7 @@ Also feel free to add as many CCs as you require under the `contact` => `message
 ## reCAPTCHA
 
 reCAPTCHA is used to prevent abusive activities on your website.
-DotKernel frontend uses the Google reCAPTCHA for its `contact us` form.
+Dotkernel frontend uses the Google reCAPTCHA for its `contact us` form.
 
 - Generate a `siteKey` and `secretKey` in your Google account: [Google reCAPTCHA](https://www.google.com/recaptcha/admin)
 
