@@ -3,7 +3,6 @@
 * `dotkernel/dot-authorization` - Authorization base package defining interfaces for authorization services to be used with Dotkernel applications
 * `dotkernel/dot-controller` - Provides base classes for action based controllers similar to Laminas controller component
 * `dotkernel/dot-data-fixtures` - Provides a CLI interface for listing & executing doctrine data fixtures
-* `dotkernel/dot-debugbar` - Wrapper on top of maximebf/php-debugbar
 * `dotkernel/dot-dependency-injection` - Dependency injection component using class attributes
 * `dotkernel/dot-errorhandler` - Logging Error Handler for Middleware Applications
 * `dotkernel/dot-flashmessenger` - Provides session messages between redirects
