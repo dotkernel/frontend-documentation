@@ -1,6 +1,20 @@
-# frontend
+# Frontend
 
-Dotkernel web starter package suitable for frontend applications.
+Dotkernel Frontend is an application (skeleton) based on Mezzio microframework using Laminas components.
+It's designed as a web starter package suitable for frontend applications.
+The current functionality is included as a proof of concept and to showcase Frontend's file architecture:
+
+- Contact us page
+- Generic page with copy
+- User accounts
+
+Use these building blocks as an example for your own custom code.
+
+Read on to find out more about the application:
+
+- A technical **overview** to understand technical requirements and included packages
+- A step-by-step **installation** guide to get you up and running in minutes
+- Detailed **how-tos** for working with the current features 
 
 ![OSS Lifecycle](https://img.shields.io/osslifecycle/dotkernel/frontend)
 ![PHP from Packagist (specify version)](https://img.shields.io/packagist/php-v/dotkernel/frontend/4.2.0)
