@@ -14,7 +14,7 @@ Read on to find out more about the application:
 
 - A technical **overview** to understand technical requirements and included packages
 - A step-by-step **installation** guide to get you up and running in minutes
-- Detailed **how-tos** for working with the current features 
+- Detailed **how-tos** for working with the current features
 
 ![OSS Lifecycle](https://img.shields.io/osslifecycle/dotkernel/frontend)
 ![PHP from Packagist (specify version)](https://img.shields.io/packagist/php-v/dotkernel/frontend/4.2.0)
