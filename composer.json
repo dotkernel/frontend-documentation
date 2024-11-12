@@ -1,11 +1,11 @@
 {
   "name": "dotkernel/frontend-documentation",
-  "description": "DotKernel Frontend documentation markdown files.",
+  "description": "Dotkernel Frontend documentation markdown files.",
   "type": "metapackage",
   "license": "MIT",
   "authors": [
     {
-      "name": "DotKernel Team",
+      "name": "Dotkernel Team",
       "email": "team@dotkernel.com"
     }
   ],

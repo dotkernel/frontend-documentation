@@ -1,19 +1,21 @@
 # Composer Installation of Packages
 
-Composer is required to install DotKernel `frontend`. You can install Composer on the [official site](https://getcomposer.org/).
+Composer is required to install Dotkernel `frontend`. You can install Composer from the [official site](https://getcomposer.org/).
 
-> First make sure that you have navigated your command prompt in the folder where you copied the files in the previous step.
+> First make sure that you have navigated your command prompt to the folder where you copied the files in the previous step.
 
 ## Install dependencies
 
 Run this command in the command prompt.
+
+> Use the **CLI** in order to ensure interactivity for proper configuration.
 
 ```shell
 composer install
 ```
 
 You should see this text below, along with a long list of packages to be installed instead of the `[...]`.
-In this example there are 158 packages, though the number can change in future `Frontend` updates.
+In this example there are 158 packages, though the number can change in future updates.
 You will find the packages in the `vendor` folder.
 
 ```shell
@@ -37,16 +39,16 @@ Please select which config file you wish to inject 'Laminas\Diactoros\ConfigProv
   Make your selection (default is 1):
 ```
 
-Simply select `[0] Do not inject`, because DotKernel includes its own configProvider which already contains the prompted configurations.
+Type `0` to select `[0] Do not inject`.
 
-> If you choose `[1] config/config.php` Laminas's `ConfigProvider` from `session` will be injected.
-> This is not required for the default installation, so make sure to select `[0] Do not inject`
+> We choose `0` because Dotkernel includes its own ConfigProvider which already contains the prompted configurations.
+> If you choose `[1] config/config.php`, an extra `ConfigProvider` will be injected.
 
 The next question is:
 
 `Remember this option for other packages of the same type? (y/N)`
 
-Type `y` here, and hit `enter`.
+Type `y` here, and hit `enter` to complete this stage.
 
 ## Development mode
 

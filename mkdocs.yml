@@ -19,7 +19,7 @@ nav:
           - "Composer": v5/installation/composer.md
           - "Configuration Files": v5/installation/configuration-files.md
           - "Doctrine ORM": v5/installation/doctrine-orm.md
-          - "Development Mode and the Debugbar": v5/installation/development-mode-debugbar.md
+          - "Development Mode and the Debugbar": v5/installation/development-mode.md
           - "Running the Application": v5/installation/running-application.md
           - "FAQ": v5/installation/faq.md
       - How to:
@@ -28,11 +28,10 @@ nav:
           - "Configure Authorizations": v5/how-to/authorization.md
           - "Use NPM Commands": v5/how-to/npm_commands.md
           - "Inject Dependencies": v5/how-to/dependency-injection.md
-          - "Configure Languages": v5/how-to/languages.md
           - "Set Up CSRF": v5/how-to/csrf.md
           - "Anonymize Accounts": v5/how-to/account-anonymization.md
 site_name: frontend
-site_description: "DotKernel Frontend"
+site_description: "Dotkernel Frontend"
 repo_url: "https://github.com/dotkernel/frontend"
 plugins:
   - search
