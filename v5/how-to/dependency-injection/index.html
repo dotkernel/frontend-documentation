@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <meta name="description" content="DotKernel Frontend">
+        <meta name="description" content="Dotkernel Frontend">
         
         
 
@@ -309,7 +309,7 @@
         
         
 <li class="subnavigation__list-item ">
-    <a href="../../installation/development-mode-debugbar/" class="subnavigation__link">Development Mode and the Debugbar</a>
+    <a href="../../installation/development-mode/" class="subnavigation__link">Development Mode and the Debugbar</a>
 </li>
 
         
@@ -383,12 +383,6 @@
         
         
 <li class="subnavigation__list-item ">
-    <a href="../languages/" class="subnavigation__link">Configure Languages</a>
-</li>
-
-        
-        
-<li class="subnavigation__list-item ">
     <a href="../csrf/" class="subnavigation__link">Set Up CSRF</a>
 </li>
 
@@ -447,9 +441,9 @@
 <p>Dependency injection is a design pattern used in software development to implement inversion of control.
 In simpler terms, it's the act of providing dependencies for an object during instantiation.</p>
 <p>In PHP, dependency injection can be implemented in various ways, including through constructor injection, setter injection and property injection.</p>
-<p>DotKernel Frontend, through its <a href="https://github.com/dotkernel/dot-dependency-injection">dot-dependency-injection</a> package focuses only on constructor injection.</p>
+<p>Dotkernel Frontend, through its <a href="https://github.com/dotkernel/dot-dependency-injection">dot-dependency-injection</a> package focuses only on constructor injection.</p>
 <h2 id="usage">Usage</h2>
-<p><strong>DotKernel Frontend</strong> comes out of the box with the <a href="https://github.com/dotkernel/dot-dependency-injection">dot-dependency-injection</a> package, which provides all the functionality injecting dependencies into any object you want.</p>
+<p><strong>Dotkernel Frontend</strong> comes out of the box with the <a href="https://github.com/dotkernel/dot-dependency-injection">dot-dependency-injection</a> package, which provides all the functionality injecting dependencies into any object you want.</p>
 <p><code>dot-dependency-injection</code> determines the dependencies by looking at the <code>#[Inject]</code> attribute, added to the constructor of a class.
 Each dependency is specified as a separate parameter of the <code>#[Inject]</code> attribute.</p>
 <p>For our example we will inject <code>UserService</code> and <code>config</code> dependencies into a <code>UserHandler</code>.</p>
@@ -483,7 +477,7 @@ class UserHandler implements RequestHandlerInterface
 <p>That's it.
 When your object is instantiated from the container, it will automatically have its dependencies resolved.</p>
 <blockquote>
-<p>Dependencies injection is available to any object within DotKernel Frontend.
+<p>Dependencies injection is available to any object within Dotkernel Frontend.
 For example, you can inject dependencies in a service, a handler and so on, simply by registering them in the <code>ConfigProvider</code>.</p>
 </blockquote>
 
@@ -506,9 +500,9 @@ For example, you can inject dependencies in a service, a handler and so on, simp
         
         <li class="page-nav__item">
             
-                <a rel="next" class="page-nav__link page-nav__link--next" href="../languages/">
+                <a rel="next" class="page-nav__link page-nav__link--next" href="../csrf/">
                     <small class="page-nav__label">Next</small>
-                    Configure Languages
+                    Set Up CSRF
                     <i class="bi bi-chevron-right"></i>
                 </a>
             
