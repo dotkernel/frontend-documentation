@@ -1,4 +1,4 @@
-# Frontend
+# Introduction
 
 Dotkernel Frontend is an application (skeleton) based on Mezzio microframework using Laminas components.
 It's designed as a web starter package suitable for frontend applications.
