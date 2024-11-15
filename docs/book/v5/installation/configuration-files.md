@@ -10,10 +10,11 @@ This step involves changing the names of or duplicating some of the `.dist` file
 - Duplicate `config/autoload/mail.local.php.dist` as `config/autoload/mail.local.php`
 - Edit `config/autoload/local.php` according to your dev machine and fill in the `database` configuration.
 
-> If you intend to send emails from your Frontend, make sure to fill in SMTP connection params. This will be covered in the next section.
+> If you intend to send emails from your Frontend, make sure to fill in SMTP connection params.
+> This will be covered in the next section.
 
 > **Optional**: in order to run/create tests, duplicate `config/autoload/local.test.php.dist` as `config/autoload/local.test.php`.
-This creates a new in-memory database that your tests will run on.
+> This creates a new in-memory database that your tests will run on.
 
 ## Mail
 
