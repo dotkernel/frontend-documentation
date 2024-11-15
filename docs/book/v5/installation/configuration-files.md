@@ -13,7 +13,7 @@ This step involves changing the names of or duplicating some of the `.dist` file
 > If you intend to send emails from your Frontend, make sure to fill in SMTP connection params.
 > This will be covered in the next section.
 
-> **Optional**: in order to run/create tests, duplicate `config/autoload/local.test.php.dist` as `config/autoload/local.test.php`. 
+> **Optional**: in order to run/create tests, duplicate `config/autoload/local.test.php.dist` as `config/autoload/local.test.php`.
 > This creates a new in-memory database that your tests will run on.
 
 ## Mail
