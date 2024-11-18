@@ -16,6 +16,8 @@ Read on to find out more about the application:
 - A step-by-step **installation** guide to get you up and running in minutes
 - Detailed **how-tos** for working with the current features
 
+Check out our [demo](https://v5.dotkernel.net/).
+
 ![OSS Lifecycle](https://img.shields.io/osslifecycle/dotkernel/frontend)
 ![PHP from Packagist (specify version)](https://img.shields.io/packagist/php-v/dotkernel/frontend/4.2.0)
 
