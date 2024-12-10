@@ -7,7 +7,7 @@ An alternative is to anonymize the data, according to [this article](https://com
 
 ## Definition
 
-**What is 'personal data'?**
+### What is 'personal data'?
 
 According to [this article](https://commission.europa.eu/law/law-topic/data-protection/reform/what-personal-data_en), personal data is:
 
@@ -27,7 +27,7 @@ This personal data is used for emails related to password reset and account acti
 
 ## Process
 
-**Anonymization**
+### Anonymization
 
 The anonymization process makes these replacements:
 
