@@ -7,9 +7,9 @@ An alternative is to anonymize the data, according to [this article](https://com
 
 ## Definition
 
-### What is 'personal data'?
+### What is Personally identifiable information?
 
-According to [this article](https://commission.europa.eu/law/law-topic/data-protection/reform/what-personal-data_en), personal data is:
+According to [this article](https://commission.europa.eu/law/law-topic/data-protection/reform/what-personal-data_en), Personally identifiable information (PII) is:
 
 - A name and surname.
 - A home address.
