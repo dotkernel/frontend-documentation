@@ -18,7 +18,7 @@
         <meta name="docsearch:component" content="frontend">
 
         
-        <link rel="canonical" href="https://docs.dotkernel.org/frontend-documentation/v5/how-to/account-anonymization/">
+        <link rel="canonical" href="https://docs.dotkernel.org/frontend-documentation/v5/reference/account-anonymization/">
         
         <link rel="shortcut icon" href="https://docs.dotkernel.org/img/dk_docs_favicon_white.svg">
 
@@ -158,7 +158,7 @@
                         
                             
                             
-                                <li class="breadcrumb-item">How to</li>
+                                <li class="breadcrumb-item">Reference</li>
                             
                         
                     
@@ -353,39 +353,71 @@
         
         
 <li class="subnavigation__list-item ">
-    <a href="../creating-migrations/" class="subnavigation__link">Create Database Migrations</a>
+    <a href="../../how-to/creating-migrations/" class="subnavigation__link">Create Database Migrations</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../creating-fixtures/" class="subnavigation__link">Create Database Fixtures</a>
+    <a href="../../how-to/creating-fixtures/" class="subnavigation__link">Create Database Fixtures</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../authorization/" class="subnavigation__link">Configure Authorizations</a>
+    <a href="../../how-to/authorization/" class="subnavigation__link">Configure Authorizations</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../npm_commands/" class="subnavigation__link">Use NPM Commands</a>
+    <a href="../../how-to/npm_commands/" class="subnavigation__link">Use NPM Commands</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../dependency-injection/" class="subnavigation__link">Inject Dependencies</a>
+    <a href="../../how-to/dependency-injection/" class="subnavigation__link">Inject Dependencies</a>
 </li>
 
         
         
 <li class="subnavigation__list-item ">
-    <a href="../csrf/" class="subnavigation__link">Set Up CSRF</a>
+    <a href="../../how-to/csrf/" class="subnavigation__link">Set Up CSRF</a>
 </li>
 
+        
+    </ul>
+</li>
+
+                    
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="subnavigation__list-item">
+    <a data-bs-toggle="collapse" href="#reference" role="button" aria-expanded="false" aria-controls="reference">
+        <span class="subnavigation__headline">Reference</span>
+    </a>
+    <ul class="subnavigation__list collapse" id="reference">
         
         
 <li class="subnavigation__list-item subnavigation__list-item--active">
@@ -416,11 +448,15 @@
             <ul class="toc__list">
             
                 <li class="toc__entry">
-                    <a href="#what-is-personal-data" class="toc__link nav-link">What is 'personal data'?</a>
+                    <a href="#premise" class="toc__link nav-link">Premise</a>
                 </li>
             
                 <li class="toc__entry">
-                    <a href="#anonymization" class="toc__link nav-link">Anonymization</a>
+                    <a href="#definition" class="toc__link nav-link">Definition</a>
+                </li>
+            
+                <li class="toc__entry">
+                    <a href="#process" class="toc__link nav-link">Process</a>
                 </li>
             
             </ul>
@@ -438,14 +474,16 @@
 
     
     
-<!--        <h2 class="chapter__headline text-black-50">How to</h2>-->
+<!--        <h2 class="chapter__headline text-black-50">Reference</h2>-->
     
 
     <h1 id="account-anonymization">Account anonymization</h1>
+<h2 id="premise">Premise</h2>
 <p>According to the GDPR, companies that record personal data from EU citizens must delete said data if its owner requests its deletion.
 An alternative is to anonymize the data, according to <a href="https://commission.europa.eu/law/law-topic/data-protection/reform/rules-business-and-organisations/dealing-citizens/do-we-always-have-delete-personal-data-if-person-asks_en">this article</a>.</p>
-<h2 id="what-is-personal-data">What is 'personal data'?</h2>
-<p>According to <a href="https://commission.europa.eu/law/law-topic/data-protection/reform/what-personal-data_en">this article</a>, personal data is:</p>
+<h2 id="definition">Definition</h2>
+<h3 id="what-is-personally-identifiable-information">What is Personally identifiable information?</h3>
+<p>According to <a href="https://commission.europa.eu/law/law-topic/data-protection/reform/what-personal-data_en">this article</a>, Personally identifiable information (PII) is:</p>
 <ul>
 <li>A name and surname.</li>
 <li>A home address.</li>
@@ -460,7 +498,8 @@ An alternative is to anonymize the data, according to <a href="https://commissio
 </ul>
 <p>Out of the box, Dotkernel Frontend saves the user's name (firstname and lastname) and email (identity).
 This personal data is used for emails related to password reset and account activation.</p>
-<h2 id="anonymization">Anonymization</h2>
+<h2 id="process">Process</h2>
+<h3 id="anonymization">Anonymization</h3>
 <p>The anonymization process makes these replacements:</p>
 <ul>
 <li>The firstname and lastname are replaced with <code>anonymous</code> concatenated with the current UNIX timestamp, e.g. <code>anonymous1725980747</code>.</li>
@@ -469,7 +508,7 @@ This personal data is used for emails related to password reset and account acti
 </ul>
 <p>The <code>userAnonymizeAppend</code> key can be set in <code>config/autoload/local.php</code> or left empty.</p>
 <blockquote>
-<p>Setting <code>userAnonymizeAppend</code> to an email domain would work as a catch-all email, if your email service provider has this option enabled.</p>
+<p>Using an email domain for <code>userAnonymizeAppend</code> would work as a catch-all email, if your email service provider has this option enabled.</p>
 </blockquote>
 
 
@@ -480,7 +519,7 @@ This personal data is used for emails related to password reset and account acti
         
         <li class="page-nav__item">
             
-                <a rel="prev" class="page-nav__link page-nav__link--prev" href="../csrf/">
+                <a rel="prev" class="page-nav__link page-nav__link--prev" href="../../how-to/csrf/">
                     <small class="page-nav__label">Previous</small>
                     <i class="bi bi-chevron-left"></i>
                     Set Up CSRF
