@@ -1,11 +1,15 @@
 # Account anonymization
 
+## Premise
+
 According to the GDPR, companies that record personal data from EU citizens must delete said data if its owner requests its deletion.
 An alternative is to anonymize the data, according to [this article](https://commission.europa.eu/law/law-topic/data-protection/reform/rules-business-and-organisations/dealing-citizens/do-we-always-have-delete-personal-data-if-person-asks_en).
 
-## What is 'personal data'?
+## Definition
 
-According to [this article](https://commission.europa.eu/law/law-topic/data-protection/reform/what-personal-data_en), personal data is:
+### What is Personally identifiable information?
+
+According to [this article](https://commission.europa.eu/law/law-topic/data-protection/reform/what-personal-data_en), Personally identifiable information (PII) is:
 
 - A name and surname.
 - A home address.
@@ -21,7 +25,9 @@ According to [this article](https://commission.europa.eu/law/law-topic/data-prot
 Out of the box, Dotkernel Frontend saves the user's name (firstname and lastname) and email (identity).
 This personal data is used for emails related to password reset and account activation.
 
-## Anonymization
+## Process
+
+### Anonymization
 
 The anonymization process makes these replacements:
 
@@ -31,4 +37,4 @@ The anonymization process makes these replacements:
 
 The `userAnonymizeAppend` key can be set in `config/autoload/local.php` or left empty.
 
-> Setting `userAnonymizeAppend` to an email domain would work as a catch-all email, if your email service provider has this option enabled.
+> Using an email domain for `userAnonymizeAppend` would work as a catch-all email, if your email service provider has this option enabled.

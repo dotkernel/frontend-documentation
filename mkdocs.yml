@@ -29,7 +29,8 @@ nav:
           - "Use NPM Commands": v5/how-to/npm_commands.md
           - "Inject Dependencies": v5/how-to/dependency-injection.md
           - "Set Up CSRF": v5/how-to/csrf.md
-          - "Anonymize Accounts": v5/how-to/account-anonymization.md
+      - Reference:
+          - "Anonymize Accounts": v5/reference/account-anonymization.md
 site_name: frontend
 site_description: "Dotkernel Frontend"
 repo_url: "https://github.com/dotkernel/frontend"
