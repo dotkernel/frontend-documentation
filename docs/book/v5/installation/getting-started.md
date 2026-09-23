@@ -1,9 +1,14 @@
 # Clone the project
 
+## Summary
+
+This page downloads the Dotkernel Frontend source code into an empty directory with `git clone` and shows the output to expect.
+It also recommends WSL2 as the development environment on Windows.
+
 ## Recommended development environment
 
 > If you are using Windows as OS on your machine, you can use WSL2 as development environment.
-> Read more here: [PHP-Mariadb-on-WLS2](https://www.dotkernel.com/php-development/almalinux-9-in-wsl2-install-php-apache-mariadb-composer-phpmyadmin/)
+> Read more here: [Dotkernel development environment on WSL2](https://github.com/dotkernel/development/blob/main/wsl/README.md)
 
 Using your terminal, navigate inside the directory you want to download the project files into.
 
@@ -32,3 +37,17 @@ Resolving deltas: 100% (3868/3868), done.
 ```
 
 You can already open the project in your preferred IDE to double-check the files were copied correctly.
+
+## FAQ
+
+### **Q: Why does the directory have to be empty?**
+
+A: Cloning into `.` fails with `fatal: destination path '.' already exists and is not an empty directory.` when the directory contains any files, and nothing is downloaded.
+
+### **Q: Which branch does `git clone` install?**
+
+A: The default branch, `5.0`, including changes that have not been released yet.
+
+### **Q: I use Windows. What environment should I use?**
+
+A: WSL2, with one of the AlmaLinux distributions from `dotkernel/development`, as described in [Running the Application](running-application.md).

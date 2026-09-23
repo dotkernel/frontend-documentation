@@ -1,5 +1,11 @@
 # Doctrine ORM
 
+## Summary
+
+This page connects Dotkernel Frontend to a MariaDB or MySQL database, creates the tables by running the migrations, and seeds the default user roles with the fixtures.
+
+## Details
+
 This step saves the database connection credentials in a Frontend configuration file.
 We do not cover the creation steps of the database itself.
 
@@ -57,14 +63,14 @@ Each migration will be logged in the `migrations` table to prevent running the s
 If everything ran correctly, you will get this confirmation.
 
 ```shell
-[OK] Successfully migrated to version: Frontend\Migrations\Version20240806123413
+[OK] Successfully migrated to version: Frontend\Migrations\Version20241120160406
 ```
 
-> The migration name `Version20240806123413` may differ in future Frontend updates.
+> The migration name `Version20241120160406` may differ in future Frontend updates.
 
 ## Fixtures
 
-Run this command to populate the `user_role` table with the default values:
+Run this command to populate the `user_role` table with the default roles (`admin`, `user` and `guest`):
 
 ```shell
 php bin/doctrine fixtures:execute
@@ -82,3 +88,23 @@ Fixtures have been loaded.
     ' <' `\ ._/'\
        `   \     \
 ```
+
+## FAQ
+
+### **Q: Which character set and collation should the database use?**
+
+A: `utf8mb4` with `utf8mb4_general_ci`, the values set in `config/autoload/local.php.dist`.
+
+### **Q: Where is the list of executed migrations kept?**
+
+A: In the `migrations` table, as configured in `config/migrations.php`.
+Doctrine Migrations uses it to skip migrations that have already run.
+
+### **Q: Which roles do the fixtures create?**
+
+A: `admin`, `user` and `guest`, in the `user_role` table.
+
+### **Q: Can I run the fixtures again?**
+
+A: Not on the same database.
+The command appends data instead of purging it, and `user_role.name` is unique, so a second run fails on the duplicate role names.

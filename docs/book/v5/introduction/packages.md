@@ -1,6 +1,13 @@
 # Packages
 
+## Summary
+
+This page lists the Composer packages that Dotkernel Frontend requires directly, with a one-line description of what each one provides.
+
+## Details
+
 * `dotkernel/dot-authorization` - Authorization base package defining interfaces for authorization services to be used with Dotkernel applications
+* `dotkernel/dot-cache` - Cache adapters used by Doctrine for metadata, query, result and hydration caching
 * `dotkernel/dot-controller` - Provides base classes for action based controllers similar to Laminas controller component
 * `dotkernel/dot-data-fixtures` - Provides a CLI interface for listing & executing doctrine data fixtures
 * `dotkernel/dot-dependency-injection` - Dependency injection component using class attributes
@@ -23,3 +30,23 @@
 * `mezzio/mezzio-fastroute` - FastRoute integration for Mezzio
 * `ramsey/uuid-doctrine` - Use ramsey/uuid as a Doctrine field type
 * `roave/psr-container-doctrine` - Doctrine Factories for PSR-11 Containers
+
+## FAQ
+
+### **Q: Where is the authoritative list of dependencies?**
+
+A: In the `require` section of `composer.json`.
+Development tools such as PHPUnit, PHPStan, the Laminas coding standard, Twig CS Fixer, Whoops and laminas-development-mode are in `require-dev`.
+
+### **Q: Which package handles routing?**
+
+A: `mezzio/mezzio-fastroute`, the FastRoute integration for Mezzio.
+
+### **Q: Which templating engine does Frontend use?**
+
+A: Twig, through `mezzio/mezzio-twigrenderer`, with Dotkernel's extensions from `dotkernel/dot-twigrenderer`.
+
+### **Q: Which packages control access to pages?**
+
+A: `dotkernel/dot-rbac-guard` applies the guards, and `dotkernel/dot-authorization` and `mezzio/mezzio-authorization-rbac` provide the role and permission model.
+See [Authorization Guards](../how-to/authorization.md).
