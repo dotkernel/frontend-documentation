@@ -1,5 +1,12 @@
 # CSRF protection in forms
 
+## Summary
+
+This page adds CSRF protection to a form in three steps: a `Csrf` form element, a CSRF validator in the input filter, and the rendered hidden field in the template.
+It also shows how to test the protection and how the token timeout works.
+
+## Details
+
 A Cross-Site Request Forgery (CSRF) attack is a type of security vulnerability that tricks a user into performing actions on a web application in which they are authenticated, without their knowledge or consent.
 
 Web applications can protect users against these types of attacks by implementing CSRF tokens in their forms which are known only to the application that generated them and must be included when submitting forms.
@@ -33,7 +40,8 @@ $this->add(new \Laminas\Form\Element\Csrf('exampleCsrf', [
 ### Validate field
 
 Open the InputFilter that validates the form fields and append the following code to the method that initializes the
-fields (usually `init`):
+fields (usually `init`).
+If the form builds its input filter itself (for example `ProfileDetailsForm`), add it there instead:
 
 ```php
 $csrf = new \Laminas\InputFilter\Input('exampleCsrf');
@@ -77,6 +85,12 @@ In order to make sure that the new CSRF field works as expected, you can inspect
 Submitting a filled out form should result in a validation error:
 
 ```text
+CSRF is invalid
+```
+
+Clearing the value instead results in:
+
+```text
 CSRF is required and cannot be empty
 ```
 
@@ -87,7 +101,27 @@ This represents the value in seconds for how long the token is valid.
 Submitting a form that has been rendered for longer than this value will result in a validation error:
 
 ```text
-**CSRF** is invalid
+CSRF is invalid
 ```
 
 > You can modify the value of `timeout` in each form, but the default value should work in most cases.
+
+## FAQ
+
+### **Q: Which forms are already protected?**
+
+A: Every shipped form: login, register, request password reset, reset password, profile details, avatar upload, change password, delete account and contact.
+Their fields are named after the form, for example `userLoginCsrf` and `contactCsrf`.
+
+### **Q: How long is a token valid?**
+
+A: 3600 seconds (one hour), set by the `timeout` option of each form's `Csrf` element.
+
+### **Q: Can two forms use the same CSRF field name?**
+
+A: Give each form its own name.
+Each name keeps its own token in the session, so forms that share a name also share, and overwrite, the same token.
+
+### **Q: Which error appears when the token is wrong?**
+
+A: A missing token gives "CSRF is required and cannot be empty"; a modified or expired token gives "CSRF is invalid".

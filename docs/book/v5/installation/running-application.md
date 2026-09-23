@@ -1,5 +1,12 @@
 # Running the application
 
+## Summary
+
+This page runs Dotkernel Frontend in a virtual host on WSL.
+It also covers the two local-only fixes: clearing a stale configuration cache and turning off secure session cookies.
+
+## Details
+
 We recommend running your applications in WSL:
 
 - Make sure you have [WSL](https://github.com/dotkernel/development/blob/main/wsl/README.md) installed on your system.
@@ -32,3 +39,25 @@ return [
 ```
 
 Do not change this in `local.php.dist` as well because this value should remain `true` on production.
+
+## FAQ
+
+### **Q: Which address does the application use?**
+
+A: The `$baseUrl` value in `config/autoload/local.php`, which is `http://dotkernel.local` by default.
+Set it to the address of your virtual host.
+
+### **Q: Can I run Frontend without a virtual host?**
+
+A: Yes, for a quick look. `composer serve` starts PHP's built-in server on port 8080 (`php -S 0.0.0.0:8080 -t public/`).
+Set `$baseUrl` to match.
+
+### **Q: Why am I logged out after every request on my local machine?**
+
+A: `session_config` => `cookie_secure` is `true`, so the browser sends the session cookie only over HTTPS.
+Set it to `false` in your `local.php` when you develop over plain HTTP.
+
+### **Q: Why do my configuration changes have no effect?**
+
+A: A configuration cache is being loaded.
+Enable development mode, or run `php bin/clear-config-cache.php`.

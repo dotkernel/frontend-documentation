@@ -1,10 +1,19 @@
 # Composer Installation of Packages
 
+## Summary
+
+This page installs the PHP dependencies with `composer install` and explains how to answer the configuration prompts it shows.
+
+## Details
+
 Composer is required to install Dotkernel Frontend. You can install Composer from the [official site](https://getcomposer.org/).
 
 > First make sure that you have navigated your command prompt to the folder where you copied the files in the previous step.
 
 ## Install dependencies
+
+> The installation requires the PHP extension `intl`, which may not be enabled by default.
+> If Composer reports `laminas/laminas-i18n ... requires ext-intl * -> the requested PHP extension intl is missing from your system.`, enable `extension=intl` in your `php.ini`.
 
 Run this command in the command prompt.
 
@@ -50,22 +59,28 @@ The next question is:
 
 Type `y` here, and hit `enter` to complete this stage.
 
+After the packages are installed, `bin/composer-post-install-script.php` creates `config/autoload/local.php` (from `local.php.dist`) and `config/autoload/mail.global.php` (from dot-mail's `mail.global.php.dist`) if they are missing.
+
 ## Development mode
 
-If you're installing the project for development, make sure you have development mode enabled, by running:
+Development mode is covered in [Development Mode](development-mode.md).
 
-```shell
-composer development-enable
-```
+## FAQ
 
-You can disable development mode by running:
+### **Q: Why should I choose `[0] Do not inject` at the prompt?**
 
-```shell
-composer development-disable
-```
+A: `config/config.php` already registers the ConfigProviders that the installer offers to inject.
+Choosing `[1]` adds them a second time.
 
-You can check if you have development mode enabled by running:
+### **Q: The install fails because `ext-intl` is missing. What should I do?**
 
-```shell
-composer development-status
-```
+A: Enable `extension=intl` in your `php.ini` and run `composer install` again; `laminas/laminas-i18n` requires it.
+
+### **Q: Which files does `composer install` create?**
+
+A: `bin/composer-post-install-script.php` creates `config/autoload/local.php` and `config/autoload/mail.global.php` if they are missing.
+It creates `config/autoload/local.test.php` only when development mode is already enabled.
+
+### **Q: Where are the packages installed?**
+
+A: In the `vendor` folder.

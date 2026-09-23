@@ -1,5 +1,11 @@
 # Dependency Injection
 
+## Summary
+
+This page explains how Dotkernel Frontend injects constructor dependencies with the `#[Inject]` attribute from `dot-dependency-injection`, and how to register a class with `AttributedServiceFactory` so that no factory has to be written.
+
+## Details
+
 Dependency injection is a design pattern used in software development to implement inversion of control.
 In simpler terms, it's the act of providing dependencies for an object during instantiation.
 
@@ -14,20 +20,21 @@ Dotkernel Frontend, through its [dot-dependency-injection](https://github.com/do
 `dot-dependency-injection` determines the dependencies by looking at the `#[Inject]` attribute, added to the constructor of a class.
 Each dependency is specified as a separate parameter of the `#[Inject]` attribute.
 
-For our example we will inject `UserService` and `config` dependencies into a `UserHandler`.
+For our example we will inject `UserServiceInterface` and `config` dependencies into a `UserController`.
 
 ```php
+use Dot\Controller\AbstractActionController;
 use Dot\DependencyInjection\Attribute\Inject;
 
-class UserHandler implements RequestHandlerInterface
+class UserController extends AbstractActionController
 {
     #[Inject(
-        UserService::class,
+        UserServiceInterface::class,
         "config",
     )]
     public function __construct(
         protected UserServiceInterface $userService,
-        protected array $config,
+        protected array $config = [],
     ) {
     }
 }
@@ -43,7 +50,7 @@ public function getDependencies(): array
 {
     return [
         'factories' => [
-            UserHandler::class => AttributedServiceFactory::class
+            UserController::class => AttributedServiceFactory::class
         ]
     ];
 }
@@ -53,4 +60,24 @@ That's it.
 When your object is instantiated from the container, it will automatically have its dependencies resolved.
 
 > Dependencies injection is available to any object within Dotkernel Frontend.
-> For example, you can inject dependencies in a service, a handler and so on, simply by registering them in the `ConfigProvider`.
+> For example, you can inject dependencies in a service, a controller and so on, simply by registering them in the `ConfigProvider`.
+
+## FAQ
+
+### **Q: Do I still need to write factories?**
+
+A: Not for classes that use `#[Inject]`.
+Register services and controllers with `AttributedServiceFactory`, and Doctrine repositories with `AttributedRepositoryFactory`, as `src/User/src/ConfigProvider.php` does.
+
+### **Q: How do I inject a single configuration key?**
+
+A: Use dot notation in the attribute.
+For example, `RecaptchaService` uses `#[Inject("config.recaptcha")]` to receive only the `recaptcha` array.
+
+### **Q: Does the order of the `#[Inject]` arguments matter?**
+
+A: Yes. The dependencies are passed to the constructor in the order they are listed, so the list must match the order of the constructor parameters.
+
+### **Q: Does the package support setter or property injection?**
+
+A: No. `dot-dependency-injection` supports constructor injection only.
